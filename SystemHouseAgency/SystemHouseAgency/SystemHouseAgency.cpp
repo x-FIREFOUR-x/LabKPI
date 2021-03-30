@@ -4,7 +4,7 @@
 
 int main()
 {
-
+	User a;
 	system("pause");
 	return 0;
 }

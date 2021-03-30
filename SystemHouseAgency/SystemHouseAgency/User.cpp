@@ -31,7 +31,7 @@ void User::signUp()
 		}
 		else
 		{
-			cout  << "Entered phone number is too long or too short: ";
+			cout  << "Entered phone number is too long or too short!" << endl;
 			cout  << "Innput phone number again: ";
 			cin >> phoneNumber1;
 		}
@@ -49,7 +49,7 @@ void User::signUp()
 		}
 		else
 		{
-			cout << "Passwords do not match!";
+			cout << "Passwords do not match!" << endl;
 			cout << "Input password again:";
 			cin >> password1;
 			cout << "Repeat password:";
