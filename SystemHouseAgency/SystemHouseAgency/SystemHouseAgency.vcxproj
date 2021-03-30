@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="SearchSystem.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
+    <ClCompile Include="User.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SearchSystem.h" />

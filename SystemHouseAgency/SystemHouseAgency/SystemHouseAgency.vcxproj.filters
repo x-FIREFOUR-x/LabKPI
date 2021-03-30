@@ -18,12 +18,20 @@
     <ClCompile Include="SystemHouseAgency.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="SearchSystem.cpp">
+=======
+    <ClCompile Include="User.cpp">
+>>>>>>> class_user
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClInclude Include="SearchSystem.h">
+=======
+    <ClInclude Include="User.h">
+>>>>>>> class_user
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
