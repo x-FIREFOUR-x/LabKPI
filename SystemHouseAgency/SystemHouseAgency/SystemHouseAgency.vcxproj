@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SearchSystem.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SearchSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,10 +1,12 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
+#include "SearchSystem.h"
+
+using namespace std;
 
 int main()
 {
-
-	system("pause");
+	SearchSystem google;
+	google.setFilters();
 	return 0;
 }
 
