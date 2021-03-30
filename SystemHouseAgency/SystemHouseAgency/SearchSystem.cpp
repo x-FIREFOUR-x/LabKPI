@@ -1,6 +1,7 @@
 #include "SearchSystem.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -48,4 +49,50 @@ void SearchSystem::setFilters()
 		maxSquare = -1;
 	else
 		maxSquare = stoi(s);
+}
+
+void SearchSystem::search(vector<ads> adverts)
+{
+	vector<ads> result;
+	for (int i = 0; i < adverts.size(); i++)
+	{
+		bool fl = true;
+		if (name != "*")
+			if (adverts[i].getName().find(name, 0) == adverts[i].getName().npos)
+				fl = false;
+		if (minPrice != -1)
+			if (adverts[i].getPrice() < minPrice)
+				fl = false;
+		if (maxPrice != -1)
+			if (adverts[i].getPrice() > maxPrice)
+				fl = false;
+		if (city != "*")
+			if (adverts[i].getAddress().find(city, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (street != "*")
+			if (adverts[i].getAddress().find(street, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (house != "*")
+			if (adverts[i].getAddress().find(house, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (minSquare != -1)
+			if (adverts[i].getSquare() < minSquare)
+				fl = false;
+		if (maxPrice != -1)
+			if (adverts[i].getSquare() > maxSquare)
+				fl = false;
+
+		if (fl)
+		{
+			result.push_back(adverts[i]);
+		}
+	}
+	for (int i = 0; i < result.size(); i++)
+		cout << i << " " << result[i] << endl;
+	string s = "";
+	while (s != "exit")
+	{
+		cin >> s;
+		result[stoi(s)].getInfo();
+	}
 }
