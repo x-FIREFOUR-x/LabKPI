@@ -21,9 +21,15 @@
     <ClCompile Include="SearchSystem.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Ad.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SearchSystem.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Ad.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

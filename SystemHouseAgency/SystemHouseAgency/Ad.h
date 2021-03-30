@@ -11,7 +11,8 @@ private:
 public:
 	Ad();
 	void SetInfo();
-	void Delete(vector<Ad>, int);
+	void Delete(std::vector<Ad>, int);
 	void GetInfo();
+	void MyAds(std::vector<Ad>);
 };
 

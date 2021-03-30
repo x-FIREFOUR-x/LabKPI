@@ -10,7 +10,7 @@ Ad::Ad()
     id = CurrentID++;
 }
 
-void Ad::Delete(vector<Ad> ads, int id1)
+void Ad::Delete1(vector<Ad> ads, int id1)
 {
     int ind;
     for (int i = 0; i < ads.size(); i++)
@@ -18,6 +18,7 @@ void Ad::Delete(vector<Ad> ads, int id1)
             ind = i;
     ads.erase(ads.begin() + ind);
 }
+
 void Ad::SetInfo()
 {
     cout << "Enter area";
@@ -27,31 +28,35 @@ void Ad::SetInfo()
     cout << "Enter adress";
     cin >> adress;
 }
-void GetInfo()
+
+void Ad::GetInfo()
 {
     cout << "INFO:";
-    cout << "area: " << area << "price: " << price << "area: " << area << "area: " << area <<
-    Console.WriteLine($"area: {area} price: {price} adress: {adress} id: {id}");
+    cout << "id: " << id << " area: " << area << " price: " << price << " adress: " << adress << " adress: ";
 }
-public static void MyAds(List<Ads> List)
+
+void Ad::MyAds(vector<Ad> ads)
 {
-    foreach(var ad in List)
+    for (int i = 0; i < ads.size(); i++)
     {
-        ad.GetInfo();
+        ads[i].GetInfo();
     }
 }
-public static void AddAds(List<Ads> ListOfAds)
+
+void AddAds(vector<Ad> ads)
 {
     while (true)
     {
-        Ads ad = new Ads();
-        ListOfAds.Add(ad);
-        foreach(var ad1 in ListOfAds)
+        Ad ad;
+        ads.push_back(ad);
+        for(int i = 0; i < ads.size(); i++)
         {
-            ad1.GetInfo();
+            ads[i].GetInfo();
         }
-        Console.WriteLine("Хотите добавить еще? 1/0");
-        if (Console.ReadLine() == "0")
+        cout << "Хотите добавить еще? 1/0";
+        string s;
+        cin >> s;
+        if (s == "0")
         {
             break;
         }
