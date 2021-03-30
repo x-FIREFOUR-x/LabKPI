@@ -1,18 +1,22 @@
 #pragma once
 #include<string>
+using namespace std;
 class Ad
 {
 private:
 	static int CurrentID;
 	int area;
 	int price;
-	std::string adress;
+	string adress;
 	int id;
 public:
 	Ad();
 	void SetInfo();
-	void Delete(std::vector<Ad>, int);
+	void Delete1(vector<Ad>, int);
 	void GetInfo();
-	void MyAds(std::vector<Ad>);
+	void MyAds(vector<Ad>);
+	void AddAds(vector<Ad>);
+	void DeleteAds(vector<Ad>);
+	void ChangeAds(vector<Ad>);
 };
 

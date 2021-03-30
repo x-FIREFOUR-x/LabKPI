@@ -2,7 +2,6 @@
 #include <vector>
 #include <iostream>
 
-using namespace std;
 
 Ad::Ad()
 {
@@ -21,11 +20,11 @@ void Ad::Delete1(vector<Ad> ads, int id1)
 
 void Ad::SetInfo()
 {
-    cout << "Enter area";
+    cout << "Enter area: ";
     cin >> area;
-    cout << "Enter price";
+    cout << "Enter price: ";
     cin >> price;
-    cout << "Enter adress";
+    cout << "Enter adress: ";
     cin >> adress;
 }
 
@@ -43,7 +42,7 @@ void Ad::MyAds(vector<Ad> ads)
     }
 }
 
-void AddAds(vector<Ad> ads)
+void Ad::AddAds(vector<Ad> ads)
 {
     while (true)
     {
@@ -53,7 +52,7 @@ void AddAds(vector<Ad> ads)
         {
             ads[i].GetInfo();
         }
-        cout << "Хотите добавить еще? 1/0";
+        cout << "Want to add another ad? (if yes input 1 / no - 0)";
         string s;
         cin >> s;
         if (s == "0")
@@ -62,37 +61,52 @@ void AddAds(vector<Ad> ads)
         }
     }
 }
-public static void DeleteAds(List<Ads> ListOfAds)
+ void Ad::DeleteAds(vector<Ad> ListOfAds)
 {
     while (true)
     {
-        Console.Write("Индекс для удаления: ");
-        int p = int.Parse(Console.ReadLine());
-        Ads.Delete(ListOfAds, p);
-        foreach(var ad1 in ListOfAds)
+        cout << "Input id ad for delete: ";
+        int p;
+        cin >> p ;
+        
+        Delete1(ListOfAds, p);
+
+        for(int i =0; i < ListOfAds.size(); i++)
         {
-            ad1.GetInfo();
+            ListOfAds[i].GetInfo();
         }
-        Console.WriteLine("Хотите delete eshe? 1/0");
-        if (Console.ReadLine() == "0")
+        cout << "Want delete another ad ? (if yes input 1 / no - 0)";
+        string s;
+        cin >> s;
+        if (s == "0")
         {
             break;
         }
     }
 }
-public static void ChangeAds(List<Ads> ListOfAds)
+ void Ad:: ChangeAds(vector<Ad> ListOfAds)
 {
     while (true)
     {
-        Console.WriteLine("Индекс для изменения: ");
-        int p = int.Parse(Console.ReadLine());
-        ListOfAds[ListOfAds.FindIndex(x = > x.id == p)].SetInfo();
-        foreach(var ad1 in ListOfAds)
+        cout << "Input id ad for delete: ";
+        int p;
+        cin >> p;
+        
+        int ind;
+        for (int i = 0; i < ListOfAds.size(); i++)
+            if (ListOfAds[i].id == p)
+                ind = i;
+        ListOfAds[ind].SetInfo();
+
+        for (int i = 0; i < ListOfAds.size(); i++)
         {
-            ad1.GetInfo();
+            ListOfAds[i].GetInfo();
         }
-        Console.WriteLine("Хотите change eshe? 1/0");
-        if (Console.ReadLine() == "0")
+
+        cout << "Want change another ad ? (if yes input 1 / no - 0)";
+        string s;
+        cin >> s;
+        if (s == "0")
         {
             break;
         }
