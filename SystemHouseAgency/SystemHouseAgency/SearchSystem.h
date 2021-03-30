@@ -12,6 +12,6 @@ private:
 
 public:
 	void setFilters();
-	void search(vector<ads>);
+	//void search(vector<ads>);
 };
 

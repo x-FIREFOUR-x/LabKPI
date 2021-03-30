@@ -51,7 +51,7 @@ void SearchSystem::setFilters()
 		maxSquare = stoi(s);
 }
 
-void SearchSystem::search(vector<ads> adverts)
+/*void SearchSystem::search(vector<ads> adverts)
 {
 	vector<ads> result;
 	for (int i = 0; i < adverts.size(); i++)
@@ -95,4 +95,4 @@ void SearchSystem::search(vector<ads> adverts)
 		cin >> s;
 		result[stoi(s)].getInfo();
 	}
-}
+}*/
