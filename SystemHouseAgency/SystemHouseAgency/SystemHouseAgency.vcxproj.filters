@@ -25,6 +25,9 @@
 >>>>>>> class_user
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Ad.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
@@ -32,6 +35,9 @@
 =======
     <ClInclude Include="User.h">
 >>>>>>> class_user
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Ad.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

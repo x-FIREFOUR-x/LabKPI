@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ad.cpp" />
     <ClCompile Include="SearchSystem.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
     <ClCompile Include="User.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ad.h" />
     <ClInclude Include="SearchSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
