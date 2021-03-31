@@ -61,6 +61,7 @@ void readAds(std::vector<Ad>& ads)
 		string title;
 		int price, area;
 		string address;
+		string phoneNumber;
 		int next, pos;
 		pos = 0;
 		next = 0;
@@ -76,8 +77,10 @@ void readAds(std::vector<Ad>& ads)
 			next = s.find(' ', pos);
 			area = stoi(s.substr(pos, next - pos));
 			pos = next + 1;
-			address = s.substr(pos, s.length() - pos);
-			Ad a(title, price, area, address);
+			next = s.find('+', pos);
+			address = s.substr(pos, next - pos - 1);
+			phoneNumber = s.substr(next, s.length() - next);
+			Ad a(title, price, area, address, phoneNumber);
 			ads.push_back(a);
 		}
 	}
@@ -90,7 +93,7 @@ void writeAds(std::vector<Ad>& ads)
 	ofstream fout("DataBase\\Ads.txt");
 	for (int i = 0; i < ads.size(); i++)
 	{
-		s = ads[i].getTitle() + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + "\n";
+		s = ads[i].getTitle() + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber() + "\n";
 		fout << s;
 	}
 	fout.close();

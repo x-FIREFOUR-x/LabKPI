@@ -9,13 +9,15 @@ private:
 	int price;
 	string title;
 	string address;
+	string phoneNumber;
 	int id;
 public:
-	Ad(string, int, int, string);
+	Ad(string, int, int, string, string);
 	string getTitle();
 	int getPrice();
 	int getArea();
 	string getAddress();
+	string getPhoneNumber();
 	/*void SetInfo();
 	void Delete1(vector<Ad>, int);
 	void GetInfo();
