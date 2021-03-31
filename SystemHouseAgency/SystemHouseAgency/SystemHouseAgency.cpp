@@ -20,14 +20,16 @@ int main()
 	int id;
 	while (true)
 	{
-		cout << endl << " Input 1 - sign up, 2 - log in, 3 - search house, 4 - close program: " << endl;
+		cout << endl << " Input 1 - sign up, 2 - log in, 3 - search house, 4 - close program: " ;
 		int operation;
 		cin >> operation;
+		cout << endl;
 		if (operation == 1)
 		{
 			User u;
 			users.push_back(u);
 
+			cout << "Please, log in to your account" << endl;
 			id = User::signIn(users);
 		}
 		if (operation == 2)
@@ -50,8 +52,9 @@ int main()
 		{
 			while (true)
 			{
-				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - sign out: " << endl;
+				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - sign out: ";
 				cin >> operation;
+				cout << endl;
 				if (operation == 1)
 				{
 					SearchSystem google;
@@ -70,12 +73,20 @@ int main()
 				}
 				if (operation == 4)
 				{
+					cout << endl << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
+					Owner::MyAds(ads, phone_number);
+					
+					cout << endl;
 					Owner::DeleteAds(ads, phone_number);
 				}
 				if (operation == 5)
 				{
+					cout << endl << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
+					Owner::MyAds(ads, phone_number);
+					
+					cout << endl;
 					Owner::ChangeAds(ads, phone_number);
 				}
 				if (operation == 6)
@@ -91,7 +102,6 @@ int main()
 	writeUsers(users);
 	writeAds(ads);
 
-	cin.get();
-	//system("pause");
+	system("pause");
 	return 0;
 }

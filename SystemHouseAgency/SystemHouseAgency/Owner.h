@@ -9,7 +9,7 @@ class Owner
 public:
 	static void MyAds(vector<Ad>, string);
 	static void AddAds(vector<Ad>&, string);
-	static void DeleteAds(vector<Ad>, string);
-	static void ChangeAds(vector<Ad>, string);
+	static void DeleteAds(vector<Ad>&, string);
+	static void ChangeAds(vector<Ad>&, string);
 };
 
