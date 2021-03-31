@@ -2,7 +2,8 @@
 using namespace std;
 class User
 {
-	string name;
+	string firstName;
+	string lastName;
 	string phoneNumber;
 	string password;
 	bool inSystem;
@@ -12,10 +13,17 @@ public:
 
 public:
 	User();
+	User(string, string, string, string);
+	User(string, string, string, string, int);
 	void signIn();
 	void signUp();
-	void getInfo();
-	void setInfo();
-	
+	//void getInfo();
+	//void setInfo();
+	string getFirstName();
+	string getLastName();
+	string getPhoneNumber();
+	string getPassword();
+	bool getInSystem();
+	int getId();
 };
 

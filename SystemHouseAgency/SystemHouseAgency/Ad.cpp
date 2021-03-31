@@ -2,8 +2,8 @@
 #include <vector>
 #include <iostream>
 
-
-/*Ad::Ad()
+/*
+Ad::Ad()
 {
     SetInfo();
     id = CurrentID++;
@@ -111,25 +111,4 @@ void Ad::AddAds(vector<Ad> ads)
             break;
         }
     }
-}
-
- int Ad::GetArea()
- {
-     return area;
- }
- int Ad::GetPrice()
- {
-     return price;
- }
- int Ad::GetId()
- {
-     return id;
- }
- string Ad::GetName()
- {
-     return name;
- }
-string Ad::GetAddress()
- {
-     return adress;
- }*/
+}*/
