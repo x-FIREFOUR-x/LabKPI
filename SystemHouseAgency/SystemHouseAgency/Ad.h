@@ -7,12 +7,16 @@ private:
 	static int CurrentID;
 	int area;
 	int price;
-	string name;
-	string adress;
+	string title;
+	string address;
 	int id;
 public:
-	/*Ad();
-	void SetInfo();
+	Ad(string, int, int, string);
+	string getTitle();
+	int getPrice();
+	int getArea();
+	string getAddress();
+	/*void SetInfo();
 	void Delete1(vector<Ad>, int);
 	void GetInfo();
 	void MyAds(vector<Ad>);

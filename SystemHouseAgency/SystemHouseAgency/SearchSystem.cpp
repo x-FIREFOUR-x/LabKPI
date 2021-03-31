@@ -9,8 +9,8 @@ void SearchSystem::setFilters()
 {
 	string s;
 	cout << "Put '*' if you dont want to fill the field\n";
-	cout << "Enter name: ";
-	cin >> name;
+	cout << "Enter title: ";
+	cin >> title;
 	cout << "Enter minPrice: ";
 	cin >> s;
 	if (s == "*")
@@ -51,35 +51,35 @@ void SearchSystem::setFilters()
 		maxArea = stoi(s);
 }
 
-/*void SearchSystem::search(vector<Ad> adverts)
+void SearchSystem::search(vector<Ad> adverts)
 {
 	vector<Ad> result;
 	for (int i = 0; i < adverts.size(); i++)
 	{
 		bool fl = true;
-		if (name != "*")
-			if (adverts[i].GetName().find(name, 0) == adverts[i].GetName().npos)
+		if (title != "*")
+			if (adverts[i].getTitle().find(title, 0) == adverts[i].getTitle().npos)
 				fl = false;
 		if (minPrice != -1)
-			if (adverts[i].GetPrice() < minPrice)
+			if (adverts[i].getPrice() < minPrice)
 				fl = false;
 		if (maxPrice != -1)
-			if (adverts[i].GetPrice() > maxPrice)
+			if (adverts[i].getPrice() > maxPrice)
 				fl = false;
 		if (city != "*")
-			if (adverts[i].GetAddress().find(city, 0) == adverts[i].GetAddress().npos)
+			if (adverts[i].getAddress().find(city, 0) == adverts[i].getAddress().npos)
 				fl = false;
 		if (street != "*")
-			if (adverts[i].GetAddress().find(street, 0) == adverts[i].GetAddress().npos)
+			if (adverts[i].getAddress().find(street, 0) == adverts[i].getAddress().npos)
 				fl = false;
 		if (house != "*")
-			if (adverts[i].GetAddress().find(house, 0) == adverts[i].GetAddress().npos)
+			if (adverts[i].getAddress().find(house, 0) == adverts[i].getAddress().npos)
 				fl = false;
 		if (minArea != -1)
-			if (adverts[i].GetArea() < minArea)
+			if (adverts[i].getArea() < minArea)
 				fl = false;
-		if (maxPrice != -1)
-			if (adverts[i].GetArea() > maxArea)
+		if (maxArea != -1)
+			if (adverts[i].getArea() > maxArea)
 				fl = false;
 
 		if (fl)
@@ -88,11 +88,11 @@ void SearchSystem::setFilters()
 		}
 	}
 	for (int i = 0; i < result.size(); i++)
-		cout << i << " " << result[i].GetName() << endl;
-	string s = "";
+		cout << i << " " << result[i].getTitle() << endl;
+	/*string s = "";
 	while (s != "exit")
 	{
 		cin >> s;
 		result[stoi(s)].GetInfo();
-	}
-}*/
+	}*/
+}
