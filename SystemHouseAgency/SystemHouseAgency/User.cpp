@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "User.h"
 int User::count = 0;
 User::User()
@@ -27,9 +28,56 @@ User::User(string firstName1, string lastName1, string phoneNumber1, string pass
 	id = id1;
 
 }
-void User::signIn()
+ int User::signIn(vector<User> users)
 {
+	 int id;
+	string phoneNumber1;
+	string password1;
 
+	bool logedIn = false;
+	bool phoneNumberCorrect = false;
+
+	while (!logedIn)
+	{
+		phoneNumberCorrect = false;
+		cout << "Innput your phone number: ";
+		cin >> phoneNumber1;
+		cout << "Innput your password: ";
+		cin >> password1;
+
+		for (int i = 0; i < users.size(); i++)
+		{
+			if (users[i].getPhoneNumber() == phoneNumber1)
+			{
+				id = i;
+				phoneNumberCorrect = true;
+				break;
+			}
+		}
+
+		if (phoneNumberCorrect)
+		{
+			for (int i = 0; i < users.size(); i++)
+			{
+				if (users[i].getPassword() == password1 && i == id)
+				{
+					logedIn = true;
+					break;
+				}
+			
+			}
+		}
+
+		if (logedIn)
+		{
+			cout << "Hello " << users[id].getFirstName() << ", you have successfully logged in to your account" << endl;
+		} 
+		else
+		{
+			cout << "Input phone number or password is wrong!" << endl;
+		}
+	}
+	return id;
 }
 void User::signUp()
 {
