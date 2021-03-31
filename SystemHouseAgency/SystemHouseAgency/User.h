@@ -1,4 +1,8 @@
+#pragma once
 #include <string>
+#include <vector>
+#include "Ad.h"
+
 using namespace std;
 class User
 {
@@ -8,6 +12,8 @@ class User
 	string password;
 	bool inSystem;
 	int id;
+	vector<Ad> likedAds;
+
 public:
 	static int count;
 
@@ -25,5 +31,7 @@ public:
 	string getPassword();
 	bool getInSystem();
 	int getId();
+	vector<Ad> getLikedAds();
+	void setLikedAds(vector<Ad>);
 };
 

@@ -51,7 +51,7 @@ void SearchSystem::setFilters()
 		maxArea = stoi(s);
 }
 
-void SearchSystem::search(vector<Ad> adverts)
+void SearchSystem::search(vector<Ad> adverts, User user)
 {
 	vector<Ad> result;
 	for (int i = 0; i < adverts.size(); i++)
@@ -88,11 +88,12 @@ void SearchSystem::search(vector<Ad> adverts)
 		}
 	}
 	for (int i = 0; i < result.size(); i++)
-		cout << i << " " << result[i].getTitle() << endl;
-	/*string s = "";
-	while (s != "exit")
 	{
-		cin >> s;
-		result[stoi(s)].GetInfo();
-	}*/
+		cout << endl;
+		cout << i << ":" << endl;
+		result[i].getInfo();
+	}
+	int k;
+	cin >> k;
+	Renter::addToLiked(result[k], user);
 }

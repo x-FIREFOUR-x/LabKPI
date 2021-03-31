@@ -1,7 +1,7 @@
 #pragma once
 #include<string>
 #include<vector>
-#include"Ad.h"
+#include"Renter.h"
 
 class SearchSystem
 {
@@ -13,6 +13,6 @@ private:
 
 public:
 	void setFilters();
-	void search(vector<Ad>);
+	void search(vector<Ad>, User);
 };
 

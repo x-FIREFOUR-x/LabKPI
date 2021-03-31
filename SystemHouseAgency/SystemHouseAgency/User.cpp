@@ -91,7 +91,7 @@ void User::signUp()
 	cout << "Input last name: ";
 	cin >> lastName;
 
-	cout  << "Innput phone number: " ;
+	cout  << "Input phone number: " ;
 	cin >> phoneNumber1;
 	while (phoneNumber == "")
 	{
@@ -102,7 +102,7 @@ void User::signUp()
 		else
 		{
 			cout  << "Entered phone number is too long or too short!" << endl;
-			cout  << "Innput phone number again: ";
+			cout  << "Input phone number again: ";
 			cin >> phoneNumber1;
 		}
 	}
@@ -167,4 +167,12 @@ bool User::getInSystem()
 int User::getId()
 {
 	return id;
+}
+vector<Ad> User::getLikedAds()
+{
+	return likedAds;
+}
+void User::setLikedAds(vector<Ad> likedAds1)
+{
+	likedAds = likedAds1;
 }

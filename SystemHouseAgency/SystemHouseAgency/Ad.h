@@ -18,12 +18,6 @@ public:
 	int getArea();
 	string getAddress();
 	string getPhoneNumber();
-	/*void SetInfo();
-	void Delete1(vector<Ad>, int);
-	void GetInfo();
-	void MyAds(vector<Ad>);
-	void AddAds(vector<Ad>);
-	void DeleteAds(vector<Ad>);
-	void ChangeAds(vector<Ad>);*/
+	void getInfo();
 };
 
