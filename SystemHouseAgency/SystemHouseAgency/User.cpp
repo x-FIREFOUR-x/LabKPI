@@ -8,6 +8,25 @@ User::User()
 	signUp();
 	id = count - 1;
 }
+User::User(string firstName1, string lastName1, string phoneNumber1, string password1)
+{
+	count++;
+	firstName = firstName1;
+	lastName = lastName1;
+	phoneNumber = phoneNumber1;
+	password = password1;
+
+}
+User::User(string firstName1, string lastName1, string phoneNumber1, string password1, int id1)
+{
+	count++;
+	firstName = firstName1;
+	lastName = lastName1;
+	phoneNumber = phoneNumber1;
+	password = password1;
+	id = id1;
+
+}
 void User::signIn()
 {
 
@@ -18,8 +37,11 @@ void User::signUp()
 	string password2;
 	string phoneNumber1;
 
-	cout  << "Input name: " ;
-	getline(cin, name);
+	cout  << "Input first name: " ;
+	cin >> firstName;
+
+	cout << "Input last name: ";
+	cin >> lastName;
 
 	cout  << "Innput phone number: " ;
 	cin >> phoneNumber1;
@@ -58,7 +80,7 @@ void User::signUp()
 	}
 	
 }
-void User::getInfo()
+/*void User::getInfo()
 {
 	cout << "Name: " << name << endl;
 	cout << "phoneNumber: " << phoneNumber << endl;
@@ -73,5 +95,28 @@ void User::setInfo()
 	cin >> phoneNumber;
 	cout << endl << "password: " << password << endl;
 	cin >> password;
+}*/
+string User::getFirstName()
+{
+	return firstName;
 }
-
+string User::getLastName()
+{
+	return lastName;
+}
+string User::getPhoneNumber()
+{
+	return phoneNumber;
+}
+string User::getPassword()
+{
+	return password;
+}
+bool User::getInSystem()
+{
+	return inSystem;
+}
+int User::getId()
+{
+	return id;
+}

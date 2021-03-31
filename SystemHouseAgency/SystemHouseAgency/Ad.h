@@ -10,13 +10,13 @@ private:
 	string adress;
 	int id;
 public:
-	Ad();
+	/*Ad();
 	void SetInfo();
 	void Delete1(vector<Ad>, int);
 	void GetInfo();
 	void MyAds(vector<Ad>);
 	void AddAds(vector<Ad>);
 	void DeleteAds(vector<Ad>);
-	void ChangeAds(vector<Ad>);
+	void ChangeAds(vector<Ad>);*/
 };
 

@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream>
 
-
+/*
 Ad::Ad()
 {
     SetInfo();
@@ -111,4 +111,4 @@ void Ad::AddAds(vector<Ad> ads)
             break;
         }
     }
-}
+}*/
