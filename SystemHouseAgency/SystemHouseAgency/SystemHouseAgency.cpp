@@ -64,7 +64,11 @@ int main()
 				if (operation == 2)
 				{
 					string phone_number = users[id].getPhoneNumber();
-					Owner::MyAds(ads, phone_number);
+					bool isAd = Owner::MyAds(ads, phone_number);
+					if (!isAd)
+					{
+						cout << "You have not ads" << endl;
+					}
 				}
 				if (operation == 3)
 				{
@@ -73,21 +77,34 @@ int main()
 				}
 				if (operation == 4)
 				{
-					cout << endl << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
-					Owner::MyAds(ads, phone_number);
+					bool isAd = Owner::MyAds(ads, phone_number);
+
+					if (!isAd)
+					{
+						cout << "You can't delete ad, because you have not ad" << endl;
+					}
+					else
+					{
+						Owner::DeleteAds(ads, phone_number);
+					}
 					
-					cout << endl;
-					Owner::DeleteAds(ads, phone_number);
 				}
 				if (operation == 5)
 				{
 					cout << endl << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
-					Owner::MyAds(ads, phone_number);
+					bool isAd = Owner::MyAds(ads, phone_number);
 					
-					cout << endl;
-					Owner::ChangeAds(ads, phone_number);
+					if (!isAd)
+					{
+						cout << "You can't change ad, because you have not ad" << endl;
+					}
+					else
+					{
+						Owner::ChangeAds(ads, phone_number);
+					}
+					
 				}
 				if (operation == 6)
 				{

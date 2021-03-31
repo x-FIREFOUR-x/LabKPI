@@ -1,16 +1,19 @@
 #include "Owner.h"
-void Owner::MyAds(vector<Ad> ads, string phoneNumber)
+bool Owner::MyAds(vector<Ad> ads, string phoneNumber)
 {
     int n=1;
+    bool isAd = false;
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
         {
             cout << n << ":" << endl;
             n++;
+            isAd = true;
             ads[i].getInfo();
         }
     }
+    return isAd;
 }
 void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
 {
