@@ -15,7 +15,7 @@ public:
 	User();
 	User(string, string, string, string);
 	User(string, string, string, string, int);
-	void signIn();
+	static int signIn(vector<User>);
 	void signUp();
 	//void getInfo();
 	//void setInfo();
