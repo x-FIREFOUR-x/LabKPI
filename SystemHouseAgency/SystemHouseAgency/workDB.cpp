@@ -1,13 +1,13 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include "Ad.h"
 #include "User.h"
+#include <iostream>
 
 void readUsers(std::vector<User>&users)
 {
 	string s;
-	ifstream fin("Users.txt");
+	ifstream fin("Database\\Users.txt");
 	while (!fin.eof())
 	{
 		string firstName, lastName, phoneNumber, password;
@@ -38,10 +38,11 @@ void readUsers(std::vector<User>&users)
 void writeUsers(std::vector<User>& users)
 {
 	string s;
-	ifstream fout("Users.txt");
+	ofstream fout("DataBase\\Users.txt");
 	for (int i = 0; i < users.size(); i++)
 	{
-			
+		s = users[i].getFirstName() + " " + users[i].getLastName() + " " + users[i].getPhoneNumber() + " " + users[i].getPassword() + "\n";
+		fout << s;
 	}
 	fout.close();
 }

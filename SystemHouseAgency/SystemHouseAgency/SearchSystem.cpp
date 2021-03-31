@@ -51,7 +51,7 @@ void SearchSystem::setFilters()
 		maxArea = stoi(s);
 }
 
-void SearchSystem::search(vector<Ad> adverts)
+/*void SearchSystem::search(vector<Ad> adverts)
 {
 	vector<Ad> result;
 	for (int i = 0; i < adverts.size(); i++)
@@ -95,4 +95,4 @@ void SearchSystem::search(vector<Ad> adverts)
 		cin >> s;
 		result[stoi(s)].GetInfo();
 	}
-}
+}*/

@@ -13,6 +13,6 @@ private:
 
 public:
 	void setFilters();
-	void search(vector<Ad>);
+	//void search(vector<Ad>);
 };
 
