@@ -16,14 +16,20 @@ void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
     int price;
     string address;
 
-    cout << "Input title your ad: " << endl;
+    string city;
+    string street;
+    string n_house;
+
+    cout << "Input title your ad: ";
     cin >> title;
-    cout << "Input area your house: "  << endl;
+    cout << "Input area your house: " ;
     cin >> area;
-    cout << "Input price your house: " << endl;
+    cout << "Input price your house: ";
     cin >> price;
-    cout << "Input address your house (city street number house): " <<  endl;
-    getline(cin, address);
+    cout << "Input address your house (city street number house): ";
+    cin >> city >> street >> n_house;
+    address = city + " " + street + " " + n_house;
+   // getline(cin, address);
     Ad ad(title, price, area, address, phoneNumber);
     ads.push_back(ad);
     
@@ -52,9 +58,12 @@ void Owner::DeleteAds(vector<Ad> ads, string phoneNumber)
 void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
 {
     string title;
+   // int area;
+    //int price;
+    string address;
+
     string area;
     string price;
-    string address;
 
     string str;
 
@@ -82,11 +91,11 @@ void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
                 }
                 if (area == "-")
                 {
-                    area = ads[i].getArea();
+                    area = to_string(ads[i].getArea());
                 }
                 if (price == "-")
                 {
-                    price = ads[i].getPrice();
+                    price = to_string(ads[i].getPrice());
                 }
                 if (address == "-")
                 {

@@ -23,8 +23,6 @@ public:
 	User(string, string, string, string, int);
 	static int signIn(vector<User>);
 	void signUp();
-	//void getInfo();
-	//void setInfo();
 	string getFirstName();
 	string getLastName();
 	string getPhoneNumber();

@@ -40,9 +40,9 @@ User::User(string firstName1, string lastName1, string phoneNumber1, string pass
 	while (!logedIn)
 	{
 		phoneNumberCorrect = false;
-		cout << "Innput your phone number: ";
+		cout << "Input your phone number: ";
 		cin >> phoneNumber1;
-		cout << "Innput your password: ";
+		cout << "Input your password: ";
 		cin >> password1;
 
 		for (int i = 0; i < users.size(); i++)
@@ -128,22 +128,6 @@ void User::signUp()
 	}
 	
 }
-/*void User::getInfo()
-{
-	cout << "Name: " << name << endl;
-	cout << "phoneNumber: " << phoneNumber << endl;
-	cout << "password: " << password << endl;
-	cout << "id: " << id << endl;
-}
-void User::setInfo()
-{
-	cout << endl << "Name: ";
-	cin >> name;
-	cout << endl << "phoneNumber: ";
-	cin >> phoneNumber;
-	cout << endl << "password: " << password << endl;
-	cin >> password;
-}*/
 string User::getFirstName()
 {
 	return firstName;
