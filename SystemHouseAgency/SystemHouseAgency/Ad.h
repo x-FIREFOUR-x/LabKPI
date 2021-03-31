@@ -18,6 +18,7 @@ public:
 	int getArea();
 	string getAddress();
 	string getPhoneNumber();
+	void getInfo();
 	/*void SetInfo();
 	void Delete1(vector<Ad>, int);
 	void GetInfo();

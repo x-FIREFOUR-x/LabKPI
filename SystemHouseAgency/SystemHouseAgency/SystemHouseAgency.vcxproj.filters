@@ -6,11 +6,13 @@
     <ClCompile Include="SystemHouseAgency.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="workDB.cpp" />
+    <ClCompile Include="Owner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h" />
     <ClInclude Include="Ad.h" />
     <ClInclude Include="SearchSystem.h" />
     <ClInclude Include="workDB.h" />
+    <ClInclude Include="Owner.h" />
   </ItemGroup>
 </Project>
