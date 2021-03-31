@@ -37,49 +37,49 @@ void SearchSystem::setFilters()
 			cin >> street;
 		}
 	}
-	cout << "Enter minSquare: ";
+	cout << "Enter minArea: ";
 	cin >> s;
 	if (s == "*")
-		minSquare = -1;
+		minArea = -1;
 	else
-		minSquare = stoi(s);
-	cout << "Enter maxSquare: ";
+		minArea = stoi(s);
+	cout << "Enter maxArea: ";
 	cin >> s;
 	if (s == "*")
-		maxSquare = -1;
+		maxArea = -1;
 	else
-		maxSquare = stoi(s);
+		maxArea = stoi(s);
 }
 
-/*void SearchSystem::search(vector<ads> adverts)
+void SearchSystem::search(vector<Ad> adverts)
 {
-	vector<ads> result;
+	vector<Ad> result;
 	for (int i = 0; i < adverts.size(); i++)
 	{
 		bool fl = true;
 		if (name != "*")
-			if (adverts[i].getName().find(name, 0) == adverts[i].getName().npos)
+			if (adverts[i].GetName().find(name, 0) == adverts[i].GetName().npos)
 				fl = false;
 		if (minPrice != -1)
-			if (adverts[i].getPrice() < minPrice)
+			if (adverts[i].GetPrice() < minPrice)
 				fl = false;
 		if (maxPrice != -1)
-			if (adverts[i].getPrice() > maxPrice)
+			if (adverts[i].GetPrice() > maxPrice)
 				fl = false;
 		if (city != "*")
-			if (adverts[i].getAddress().find(city, 0) == adverts[i].getAddress().npos)
+			if (adverts[i].GetAddress().find(city, 0) == adverts[i].GetAddress().npos)
 				fl = false;
 		if (street != "*")
-			if (adverts[i].getAddress().find(street, 0) == adverts[i].getAddress().npos)
+			if (adverts[i].GetAddress().find(street, 0) == adverts[i].GetAddress().npos)
 				fl = false;
 		if (house != "*")
-			if (adverts[i].getAddress().find(house, 0) == adverts[i].getAddress().npos)
+			if (adverts[i].GetAddress().find(house, 0) == adverts[i].GetAddress().npos)
 				fl = false;
-		if (minSquare != -1)
-			if (adverts[i].getSquare() < minSquare)
+		if (minArea != -1)
+			if (adverts[i].GetArea() < minArea)
 				fl = false;
 		if (maxPrice != -1)
-			if (adverts[i].getSquare() > maxSquare)
+			if (adverts[i].GetArea() > maxArea)
 				fl = false;
 
 		if (fl)
@@ -88,11 +88,11 @@ void SearchSystem::setFilters()
 		}
 	}
 	for (int i = 0; i < result.size(); i++)
-		cout << i << " " << result[i] << endl;
+		cout << i << " " << result[i].GetName() << endl;
 	string s = "";
 	while (s != "exit")
 	{
 		cin >> s;
-		result[stoi(s)].getInfo();
+		result[stoi(s)].GetInfo();
 	}
-}*/
+}
