@@ -6,7 +6,13 @@ int User::count = 0;
 User::User()
 {
 	count++;
-	signUp();
+	//signUp();
+	id = count - 1;
+}
+User::User(vector<string> phoneNumbers)
+{
+	count++;
+	signUp(phoneNumbers);
 	id = count - 1;
 }
 User::User(string firstName1, string lastName1, string phoneNumber1, string password1)
@@ -79,7 +85,7 @@ User::User(string firstName1, string lastName1, string phoneNumber1, string pass
 	}
 	return id;
 }
-void User::signUp()
+void User::signUp(vector<string> phoneNumbers)
 {
 	string password1;
 	string password2;
@@ -95,17 +101,34 @@ void User::signUp()
 	cin >> phoneNumber1;
 	while (phoneNumber == "")
 	{
-		if (phoneNumber1.length() == 13)
+		bool numberUsed = false;
+		for (int i = 0; i < phoneNumbers.size(); i++)
+		{
+			if (phoneNumbers[i] == phoneNumber1)
+			{
+				numberUsed = true;
+				break;
+			}
+		}
+		if (phoneNumber1.length() == 13 && numberUsed == false)
 		{
 			phoneNumber = phoneNumber1;
 		}
 		else
-		{
-			cout  << "Entered phone number is too long or too short!" << endl;
-			cout  << "Input phone number again: ";
-			cin >> phoneNumber1;
-		}
+			if (phoneNumber1.length() != 13)
+			{
+				cout  << "Entered phone number is too long or too short!" << endl;
+				cout  << "Input phone number again: ";
+				cin >> phoneNumber1;
+			}
+			else
+			{
+				cout << "This phone number is already used!" << endl;
+				cout << "Input another phone number: ";
+				cin >> phoneNumber1;
+			}
 	}
+	
 
 	cout << "Input password:";
 	cin >> password1;

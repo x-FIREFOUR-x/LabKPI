@@ -26,7 +26,8 @@ int main()
 		cout << endl;
 		if (operation == "1")
 		{
-			User u;
+			vector<string> phoneNumbers = createPhoneNumbers(users);
+			User u(phoneNumbers);
 			users.push_back(u);
 
 			cout << "Please, log in to your account" << endl;

@@ -18,10 +18,11 @@ public:
 
 public:
 	User();
+	User(vector<string>);
 	User(string, string, string, string);
 	User(string, string, string, string, int);
 	static int signIn(vector<User>);
-	void signUp();
+	void signUp(vector<string>);
 	string getFirstName();
 	string getLastName();
 	string getPhoneNumber();

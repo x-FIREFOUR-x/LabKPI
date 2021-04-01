@@ -113,3 +113,14 @@ void writeAds(std::vector<Ad>& ads)
 	}
 	fout.close();
 }
+
+vector<string> createPhoneNumbers(vector<User> users)
+{
+	vector<string> phoneNumbers;
+	for (int i = 0; i < users.size(); i++)
+	{
+		string phoneN = users[i].getPhoneNumber();
+		phoneNumbers.push_back(phoneN);
+	}
+	return phoneNumbers;
+}
