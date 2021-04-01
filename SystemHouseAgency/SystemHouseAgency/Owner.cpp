@@ -1,13 +1,19 @@
 #include "Owner.h"
-void Owner::MyAds(vector<Ad> ads, string phoneNumber)
+bool Owner::MyAds(vector<Ad> ads, string phoneNumber)
 {
+    int n=1;
+    bool isAd = false;
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
         {
+            cout << n << ":" << endl;
+            n++;
+            isAd = true;
             ads[i].getInfo();
         }
     }
+    return isAd;
 }
 void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
 {
@@ -16,31 +22,37 @@ void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
     int price;
     string address;
 
-    cout << "Input title your ad: " << endl;
+    cout << "Input title your ad: ";
     cin >> title;
-    cout << "Input area your house: "  << endl;
+    cout << "Input area your house: " ;
     cin >> area;
-    cout << "Input price your house: " << endl;
+    cout << "Input price your house: ";
     cin >> price;
-    cout << "Input address your house (city street number house): " <<  endl;
+    cout << "Input address your house (city street number house): ";
+
+    if (cin.peek() == '\n') {
+        cin.ignore();
+    }
     getline(cin, address);
-    Ad ad(title, price, area, address, phoneNumber);
+
+    Ad ad(title, area, price,  address, phoneNumber);
     ads.push_back(ad);
     
 }
-void Owner::DeleteAds(vector<Ad> ads, string phoneNumber)
+void Owner::DeleteAds(vector<Ad>& ads, string phoneNumber)
 {
     int numberAd;
     int currentNumberAd = 0;
     cout << "Input number ad, which you want delete: ";
     cin >> numberAd;
+    numberAd--;
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
         {
             if (numberAd == currentNumberAd)
             {
-                ads.erase(ads.begin() + i - 1);
+                ads.erase(ads.begin() + i);
             }
             else
             {
@@ -49,19 +61,18 @@ void Owner::DeleteAds(vector<Ad> ads, string phoneNumber)
         }
     }
 }
-void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
+void Owner::ChangeAds(vector<Ad>& ads, string phoneNumber)
 {
     string title;
+    string address;
     string area;
     string price;
-    string address;
-
-    string str;
 
     int numberAd;
     int currentNumberAd = 0;
     cout << "Input number ad, which you want change: ";
     cin >> numberAd;
+    numberAd--;
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
@@ -75,6 +86,10 @@ void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
                 cout << "Input new price ad(if you don't want change this parameter input -): ";
                 cin >> price;
                 cout << "Input new address ad(if you don't want change this parameter input -): ";
+                if (cin.peek() == '\n') 
+                {
+                    cin.ignore();
+                }
                 getline(cin, address);
                 if (title == "-")
                 {
@@ -82,11 +97,11 @@ void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
                 }
                 if (area == "-")
                 {
-                    area = ads[i].getArea();
+                    area = to_string(ads[i].getArea());
                 }
                 if (price == "-")
                 {
-                    price = ads[i].getPrice();
+                    price = to_string(ads[i].getPrice());
                 }
                 if (address == "-")
                 {
@@ -94,6 +109,7 @@ void Owner::ChangeAds(vector<Ad> ads, string phoneNumber)
                 }
                 Ad ad(title, stoi(area), stoi(price), address, phoneNumber);
                 ads[i] = ad;
+                break;
             }
             else
             {
