@@ -134,7 +134,7 @@ void SearchSystem::search(vector<Ad>& adverts, User user)
 	for (int i = 0; i < result.size(); i++)
 	{
 		cout << endl;
-		cout << i << ":" << endl;
+		cout << i+1 << ":" << endl;
 		adverts[result[i]].getInfo();
 	}
 	cout << endl << "Enter numbers of houses, which you want to add to favourites: ";
@@ -148,7 +148,7 @@ void SearchSystem::search(vector<Ad>& adverts, User user)
 	while (next != s.npos)
 	{
 		next = s.find(' ', pos);
-		int k = stoi(s.substr(pos, next - pos));
+		int k = stoi(s.substr(pos, next - pos))-1;
 		pos = next + 1;
 		Renter::addToLiked(adverts[result[k]], user.getPhoneNumber());
 	}

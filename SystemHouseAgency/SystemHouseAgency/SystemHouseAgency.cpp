@@ -21,31 +21,42 @@ int main()
 	while (true)
 	{
 		cout << endl << " Input 1 - sign up, 2 - log in, 3 - search house, 4 - close program: " ;
-		int operation;
+		string operation;
 		cin >> operation;
 		cout << endl;
-		if (operation == 1)
+		if (operation == "1")
 		{
 			User u;
 			users.push_back(u);
 
 			cout << "Please, log in to your account" << endl;
 			id = User::signIn(users);
+			exit = false;
 		}
-		if (operation == 2)
+		else
+		if (operation == "2")
 		{
 			id = User::signIn(users);
+			exit = false;
 		}
-		if (operation == 3)
+		else
+		if (operation == "3")
 		{
 			SearchSystem google;
 			google.setFilters();
 			google.search(ads);
+			exit = true;
 		}
-		if (operation == 4)
+		else
+		if (operation == "4")
 		{
 			exit = true;
 			break;
+		}
+		else
+		{
+			exit = true;
+			cout << "Incorrectly selected operation! Try again";
 		}
 
 		if (!exit)
@@ -55,13 +66,14 @@ int main()
 				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - show my favourite ads, 7 - sign out: ";
 				cin >> operation;
 				cout << endl;
-				if (operation == 1)
+				if (operation == "1")
 				{
 					SearchSystem google;
 					google.setFilters();
 					google.search(ads, users[id]);
 				}
-				if (operation == 2)
+				else
+				if (operation == "2")
 				{
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
@@ -70,13 +82,16 @@ int main()
 						cout << "You have not ads" << endl;
 					}
 				}
-				if (operation == 3)
+				else
+				if (operation == "3")
 				{
 					string phone_number = users[id].getPhoneNumber();
 					Owner::AddAds(ads, phone_number);
 				}
-				if (operation == 4)
+				else
+				if (operation == "4")
 				{
+					cout << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
 
@@ -90,9 +105,10 @@ int main()
 					}
 					
 				}
-				if (operation == 5)
+				else
+				if (operation == "5")
 				{
-					cout << endl << "My ads:" << endl;
+					cout << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
 					
@@ -106,17 +122,23 @@ int main()
 					}
 					
 				}
-				if (operation == 6)
+				else
+				if (operation == "6")
 				{
 					cout << endl << "My favourite ads:" << endl;
 					cout << endl;
 					string phone_number = users[id].getPhoneNumber();
 					Renter::showFavouriteAds(ads, phone_number);
 				}
-				if (operation == 7)
+				else
+				if (operation == "7")
 				{
 					exit = true;
 					break;
+				}
+				else
+				{
+					cout << "Incorrectly selected operation! Try again";
 				}
 			}
 		}
