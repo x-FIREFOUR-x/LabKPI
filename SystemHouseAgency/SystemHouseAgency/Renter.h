@@ -8,7 +8,7 @@ class Renter
 {
 public:
 	static void addToLiked(Ad&, string);
-	static void showFavouriteAds(vector<Ad>, string);
-	static void deleteFavouriteAds(Ad&, string);
+	static bool showFavouriteAds(vector<Ad>, string);
+	static void deleteFavouriteAds(vector<Ad>&, string, int);
 };
 

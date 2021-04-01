@@ -125,17 +125,43 @@ int main()
 				else
 				if (operation == "6")
 				{
+					bool fl;
 					cout << endl << "My favourite ads:" << endl;
 					cout << endl;
 					string phone_number = users[id].getPhoneNumber();
-					Renter::showFavouriteAds(ads, phone_number);
+					fl = Renter::showFavouriteAds(ads, phone_number);
+					if (!fl)
+						cout << "You have no favourite ads" << endl;
+
 				}
 				else
 				if (operation == "7")
 				{
-					exit = true;
-					break;
+					bool fl;
+					cout << endl << "My favourite ads:" << endl;
+					cout << endl;
+					string phone_number = users[id].getPhoneNumber();
+					fl = Renter::showFavouriteAds(ads, phone_number);
+					if (fl)
+					{
+						cout << "Choose ads which you want to delete: ";
+						string s = "";
+						if (cin.peek() == '\n') {
+							cin.ignore();
+						}
+						int k;
+						cin >> k;
+						Renter::deleteFavouriteAds(ads, users[id].getPhoneNumber(), k - 1);
+					}
+					else
+						cout << "You have no favourite ads" << endl;
 				}
+				else
+					if (operation == "8")
+					{
+						exit = true;
+						break;
+					}
 				else
 				{
 					cout << "Incorrectly selected operation! Try again";
