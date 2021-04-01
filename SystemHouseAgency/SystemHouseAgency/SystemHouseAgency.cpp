@@ -158,7 +158,7 @@ int main()
 						Renter::deleteFavouriteAds(ads, users[id].getPhoneNumber(), k - 1);
 					}
 					else
-						cout << "You have no favourite ads" << endl;
+						cout << "You can't delete favourite ad, because you have not favourite ads" << endl;
 				}
 				else
 					if (operation == "8")

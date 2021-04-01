@@ -143,9 +143,9 @@ void User::signUp(vector<string> phoneNumbers)
 		else
 		{
 			cout << "Passwords do not match!" << endl;
-			cout << "Input password again:";
+			cout << "Input password again: ";
 			cin >> password1;
-			cout << "Repeat password:";
+			cout << "Repeat password: ";
 			cin >> password2;
 		}
 	}
