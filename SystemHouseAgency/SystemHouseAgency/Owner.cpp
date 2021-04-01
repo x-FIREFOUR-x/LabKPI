@@ -23,7 +23,10 @@ void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
     string address;
 
     cout << "Input title your ad: ";
-    cin >> title;
+    if (cin.peek() == '\n') {
+        cin.ignore();
+    }
+    getline(cin, title);
     cout << "Input area your house: " ;
     cin >> area;
     cout << "Input price your house: ";
@@ -80,7 +83,10 @@ void Owner::ChangeAds(vector<Ad>& ads, string phoneNumber)
             if (numberAd == currentNumberAd)
             {
                 cout << "Input new title ad(if you don't want change this parameter input -): ";
-                cin >> title;
+                if (cin.peek() == '\n') {
+                    cin.ignore();
+                }
+                getline(cin, title);
                 cout << "Input new area ad(if you don't want change this parameter input -): ";
                 cin >> area;
                 cout << "Input new price ad(if you don't want change this parameter input -): ";
