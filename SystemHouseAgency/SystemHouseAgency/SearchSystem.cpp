@@ -144,12 +144,15 @@ void SearchSystem::search(vector<Ad>& adverts, User user)
 		cin.ignore();
 	}
 	getline(cin, s);
-	int next = 0, pos = 0;
-	while (next != s.npos)
+	if (s != "-")
 	{
-		next = s.find(' ', pos);
-		int k = stoi(s.substr(pos, next - pos))-1;
-		pos = next + 1;
-		Renter::addToLiked(adverts[result[k]], user.getPhoneNumber());
+		int next = 0, pos = 0;
+		while (next != s.npos)
+		{
+			next = s.find(' ', pos);
+			int k = stoi(s.substr(pos, next - pos)) - 1;
+			pos = next + 1;
+			Renter::addToLiked(adverts[result[k]], user.getPhoneNumber());
+		}
 	}
 }
