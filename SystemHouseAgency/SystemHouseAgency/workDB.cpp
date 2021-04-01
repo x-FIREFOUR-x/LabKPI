@@ -72,6 +72,12 @@ void readAds(std::vector<Ad>& ads)
 			vector<string> likedUsers;
 			next = s.find(' ', pos);
 			title = s.substr(pos, next - pos);
+			string title1 = "";
+			for (int i = 0; i < title.length(); i++)
+			{
+				if (title[i] == '_')
+					title[i] = ' ';
+			}
 			pos = next + 1;
 			next = s.find(' ', pos);
 			price = stoi(s.substr(pos, next - pos));
@@ -104,7 +110,15 @@ void writeAds(std::vector<Ad>& ads)
 	ofstream fout("DataBase\\Ads.txt");
 	for (int i = 0; i < ads.size(); i++)
 	{
-		s = ads[i].getTitle() + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber();
+		int next = 0, pos = 0;
+		string title;
+		title = ads[i].getTitle();
+		for (int i = 0; i < title.length(); i++)
+		{
+			if (title[i] == ' ')
+				title[i] = '_';
+		}
+		s = title + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber();
 		vector<string> likedUsers = ads[i].getLikedUsers();
 		for (int j = 0; j < likedUsers.size(); j++)
 			s = s + " " + likedUsers[j];
