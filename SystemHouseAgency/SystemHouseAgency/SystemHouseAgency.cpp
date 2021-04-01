@@ -30,6 +30,8 @@ int main()
 			User u(phoneNumbers);
 			users.push_back(u);
 
+			writeUsers(users);
+
 			cout << "Please, log in to your account" << endl;
 			id = User::signIn(users);
 			exit = false;
@@ -59,12 +61,13 @@ int main()
 			exit = true;
 			cout << "Incorrectly selected operation! Try again";
 		}
+		writeUsers(users);
 
 		if (!exit)
 		{
 			while (true)
 			{
-				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - show my favourite ads, 7 - sign out: ";
+				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - show my favourite ads, 7 - delete favourite ad, 8 - sign out: ";
 				cin >> operation;
 				cout << endl;
 				if (operation == "1")
@@ -167,6 +170,8 @@ int main()
 				{
 					cout << "Incorrectly selected operation! Try again";
 				}
+
+				writeAds(ads);
 			}
 		}
 		
