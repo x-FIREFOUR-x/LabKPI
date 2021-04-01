@@ -28,3 +28,15 @@ void Renter::showFavouriteAds(vector<Ad> ads, string phoneNumber)
 			}
 	}
 }
+
+void Renter::deleteFavouriteAds(Ad& a, string phoneNumber)
+{
+	int ind;
+	vector<string> temp;
+	temp = a.getLikedUsers();
+	for (int i = 0; i < temp.size(); i++)
+		if (temp[i] == phoneNumber)
+			ind = i;
+	temp.erase(temp.begin() + ind);
+	a.setLikedUsers(temp);
+}
