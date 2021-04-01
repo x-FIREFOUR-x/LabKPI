@@ -11,6 +11,16 @@ Ad::Ad(string title1, int area1, int price1,  string address1, string phoneNumbe
     phoneNumber = phoneNumber1;
 }
 
+Ad::Ad(string title1, int area1, int price1, string address1, string phoneNumber1, vector<string> likedUsers1)
+{
+    title = title1;
+    price = price1;
+    area = area1;
+    address = address1;
+    phoneNumber = phoneNumber1;
+    likedUsers = likedUsers1;
+}
+
 string Ad::getTitle() 
 { 
     return title; 
@@ -30,6 +40,14 @@ string Ad::getAddress()
 string Ad::getPhoneNumber() 
 { 
     return phoneNumber; 
+}
+vector<string> Ad::getLikedUsers()
+{
+    return likedUsers;
+}
+void Ad::setLikedUsers(vector<string> likedUsers1)
+{
+    likedUsers = likedUsers1;
 }
 void Ad::getInfo()
 {

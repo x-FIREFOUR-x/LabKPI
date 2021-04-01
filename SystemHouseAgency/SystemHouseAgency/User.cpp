@@ -152,11 +152,3 @@ int User::getId()
 {
 	return id;
 }
-vector<Ad> User::getLikedAds()
-{
-	return likedAds;
-}
-void User::setLikedAds(vector<Ad> likedAds1)
-{
-	likedAds = likedAds1;
-}

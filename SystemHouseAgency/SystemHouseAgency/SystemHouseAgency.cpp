@@ -36,12 +36,12 @@ int main()
 		{
 			id = User::signIn(users);
 		}
-		/*if (operation == 3)
+		if (operation == 3)
 		{
 			SearchSystem google;
 			google.setFilters();
-			User
-		}*/
+			google.search(ads);
+		}
 		if (operation == 4)
 		{
 			exit = true;
@@ -52,7 +52,7 @@ int main()
 		{
 			while (true)
 			{
-				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - sign out: ";
+				cout << endl << " Input 1 - search house, 2 - list my ads,  3 - create ad, 4 - delete ad, 5 - change ad, 6 - show my favourite ads, 7 - sign out: ";
 				cin >> operation;
 				cout << endl;
 				if (operation == 1)
@@ -107,6 +107,13 @@ int main()
 					
 				}
 				if (operation == 6)
+				{
+					cout << endl << "My favourite ads:" << endl;
+					cout << endl;
+					string phone_number = users[id].getPhoneNumber();
+					Renter::showFavouriteAds(ads, phone_number);
+				}
+				if (operation == 7)
 				{
 					exit = true;
 					break;

@@ -51,7 +51,7 @@ void SearchSystem::setFilters()
 		maxArea = stoi(s);
 }
 
-void SearchSystem::search(vector<Ad> adverts, User user)
+void SearchSystem::search(vector<Ad> adverts)
 {
 	vector<Ad> result;
 	for (int i = 0; i < adverts.size(); i++)
@@ -93,7 +93,63 @@ void SearchSystem::search(vector<Ad> adverts, User user)
 		cout << i << ":" << endl;
 		result[i].getInfo();
 	}
-	int k;
-	cin >> k;
-	Renter::addToLiked(result[k], user);
+}
+
+void SearchSystem::search(vector<Ad>& adverts, User user)
+{
+	vector<int> result;
+	for (int i = 0; i < adverts.size(); i++)
+	{
+		bool fl = true;
+		if (title != "*")
+			if (adverts[i].getTitle().find(title, 0) == adverts[i].getTitle().npos)
+				fl = false;
+		if (minPrice != -1)
+			if (adverts[i].getPrice() < minPrice)
+				fl = false;
+		if (maxPrice != -1)
+			if (adverts[i].getPrice() > maxPrice)
+				fl = false;
+		if (city != "*")
+			if (adverts[i].getAddress().find(city, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (street != "*")
+			if (adverts[i].getAddress().find(street, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (house != "*")
+			if (adverts[i].getAddress().find(house, 0) == adverts[i].getAddress().npos)
+				fl = false;
+		if (minArea != -1)
+			if (adverts[i].getArea() < minArea)
+				fl = false;
+		if (maxArea != -1)
+			if (adverts[i].getArea() > maxArea)
+				fl = false;
+
+		if (fl)
+		{
+			result.push_back(i);
+		}
+	}
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout << endl;
+		cout << i << ":" << endl;
+		adverts[result[i]].getInfo();
+	}
+	cout << endl << "Enter numbers of houses, which you want to add to favourites: ";
+
+	string s = "";
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, s);
+	int next = 0, pos = 0;
+	while (next != s.npos)
+	{
+		next = s.find(' ', pos);
+		int k = stoi(s.substr(pos, next - pos));
+		pos = next + 1;
+		Renter::addToLiked(adverts[result[k]], user.getPhoneNumber());
+	}
 }

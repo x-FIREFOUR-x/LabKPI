@@ -7,6 +7,7 @@ using namespace std;
 class Renter
 {
 public:
-	static void addToLiked(Ad, User&);
+	static void addToLiked(Ad&, string);
+	static void showFavouriteAds(vector<Ad>, string);
 };
 

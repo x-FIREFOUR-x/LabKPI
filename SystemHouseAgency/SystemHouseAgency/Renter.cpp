@@ -1,10 +1,30 @@
 #include "Renter.h"
+#include <iostream>
 
-void Renter::addToLiked(Ad a, User& user)
+void Renter::addToLiked(Ad& a, string phoneNumber)
 {
-	vector<Ad> temp;
-	a.getInfo();
-	temp = user.getLikedAds();
-	temp.push_back(a);
-	user.setLikedAds(temp);
+	bool fl = true;
+	vector<string> temp;
+	temp = a.getLikedUsers();
+	for (int i = 0; i < temp.size(); i++)
+		if (temp[i] == phoneNumber)
+			fl = false;
+	if (fl)
+		temp.push_back(phoneNumber);
+	a.setLikedUsers(temp);
+}
+
+void Renter::showFavouriteAds(vector<Ad> ads, string phoneNumber)
+{
+	for (int i = 0; i < ads.size(); i++)
+	{
+		vector<string> likedUsers = ads[i].getLikedUsers();
+		for (int j = 0; j < likedUsers.size(); j++)
+			if (likedUsers[j] == phoneNumber)
+			{
+				ads[i].getInfo();
+				cout << endl;
+				break;
+			}
+	}
 }

@@ -69,6 +69,7 @@ void readAds(std::vector<Ad>& ads)
 		getline(fin, s);
 		if (s != "")
 		{
+			vector<string> likedUsers;
 			next = s.find(' ', pos);
 			title = s.substr(pos, next - pos);
 			pos = next + 1;
@@ -80,8 +81,17 @@ void readAds(std::vector<Ad>& ads)
 			pos = next + 1;
 			next = s.find('+', pos);
 			address = s.substr(pos, next - pos - 1);
-			phoneNumber = s.substr(next, s.length() - next);
-			Ad a(title, price, area, address, phoneNumber);
+			pos = next;
+			next = s.find(' ', pos);
+			phoneNumber = s.substr(pos, next - pos);
+			pos = next + 1;
+			while (next != s.npos)
+			{
+				next = s.find(' ', pos);
+				likedUsers.push_back(s.substr(pos, next - pos));
+				pos = next + 1;
+			}
+			Ad a(title, price, area, address, phoneNumber, likedUsers);
 			ads.push_back(a);
 		}
 	}
@@ -94,7 +104,11 @@ void writeAds(std::vector<Ad>& ads)
 	ofstream fout("DataBase\\Ads.txt");
 	for (int i = 0; i < ads.size(); i++)
 	{
-		s = ads[i].getTitle() + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber() + "\n";
+		s = ads[i].getTitle() + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber();
+		vector<string> likedUsers = ads[i].getLikedUsers();
+		for (int j = 0; j < likedUsers.size(); j++)
+			s = s + " " + likedUsers[j];
+		s = s + "\n";
 		fout << s;
 	}
 	fout.close();
