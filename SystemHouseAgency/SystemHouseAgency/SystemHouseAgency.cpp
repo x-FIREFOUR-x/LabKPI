@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "workDB.h"
-#include "SearchSystem.h"
+#include "SearchSystemView.h"
 #include "Owner.h"
 
 using namespace std;
@@ -45,10 +45,8 @@ int main()
 		else
 		if (operation == "3")
 		{
-			SearchSystem google;
-			google.setFilters();
-			google.search(ads);
-			exit = true;
+			SearchSystemView googleView;
+			googleView.showResults(ads);
 		}
 		else
 		if (operation == "4")
@@ -72,9 +70,8 @@ int main()
 				cout << endl;
 				if (operation == "1")
 				{
-					SearchSystem google;
-					google.setFilters();
-					google.search(ads, users[id]);
+					SearchSystemView googleView;
+					googleView.showResults(ads, users[id]);
 				}
 				else
 				if (operation == "2")

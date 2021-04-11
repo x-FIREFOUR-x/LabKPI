@@ -143,6 +143,7 @@
     <ClCompile Include="Renter.cpp" />
     <ClCompile Include="Owner.cpp" />
     <ClCompile Include="SearchSystem.cpp" />
+    <ClCompile Include="SearchSystemView.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="workDB.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Renter.h" />
     <ClInclude Include="Owner.h" />
+    <ClInclude Include="SearchSystemView.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="workDB.h" />
   </ItemGroup>

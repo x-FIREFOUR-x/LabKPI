@@ -1,5 +1,5 @@
-little_house 4800 32 Mykolaiv Soborna 15 +380675891565
-house_in_Odesa 7300 65 Odesa Sea 7 +380675891565 +380676898123 +380981333444
-Villa 35000 150 Mykolaiv Admirala 4 +380675891565 +380676898123 +380981333444
-Party_house_in_Volyn 150 9000 Volodymyr-Volynskyi Kovelska 99 +380676898123 +380981333444
-Castle_Lubarta 300 56000 Lutsk Kafedralna 1A +380676898123
+little_house 32 4800 Mykolaiv Soborna 15 +380675891565
+house_in_Odesa 65 7300 Odesa Sea 7 +380675891565 +380676898123 +380981333444
+Villa 150 35000 Mykolaiv Admirala 4 +380675891565 +380676898123 +380981333444
+Party_house_in_Volyn 9000 150 Volodymyr-Volynskyi Kovelska 99 +380676898123
+Castle_Lubarta 56000 300 Lutsk Kafedralna 1A +380676898123 +380981333444
