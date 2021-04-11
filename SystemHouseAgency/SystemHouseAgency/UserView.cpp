@@ -90,28 +90,7 @@ int UserView::signInView(vector<User> users)
 		cout << "Input your password: ";
 		cin >> password1;
 
-		for (int i = 0; i < users.size(); i++)
-		{
-			if (users[i].getPhoneNumber() == phoneNumber1)
-			{
-				id = i;
-				phoneNumberCorrect = true;
-				break;
-			}
-		}
-
-		if (phoneNumberCorrect)
-		{
-			for (int i = 0; i < users.size(); i++)
-			{
-				if (users[i].getPassword() == password1 && i == id)
-				{
-					logedIn = true;
-					break;
-				}
-
-			}
-		}
+		id = User::signIn(users, phoneNumber1, password1, logedIn, phoneNumberCorrect);
 
 		if (logedIn)
 		{

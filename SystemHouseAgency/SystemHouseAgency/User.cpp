@@ -34,10 +34,33 @@ User::User(string firstName1, string lastName1, string phoneNumber1, string pass
 	id = id1;
 
 }
- /*int User::signIn(vector<User> users)
+ int User::signIn(vector<User> users, string phoneNumber1, string password1, bool& logedIn, bool&  phoneNumberCorrect)
 {
+	 int id = 0;
+	 for (int i = 0; i < users.size(); i++)
+	 {
+		 if (users[i].getPhoneNumber() == phoneNumber1)
+		 {
+			 id = i;
+			 phoneNumberCorrect = true;
+			 break;
+		 }
+	 }
 
-}*/
+	 if (phoneNumberCorrect)
+	 {
+		 for (int i = 0; i < users.size(); i++)
+		 {
+			 if (users[i].getPassword() == password1 && i == id)
+			 {
+				 logedIn = true;
+				 break;
+			 }
+
+		 }
+	 }
+	 return id;
+}
 void User::signUp(string firstName1, string lastName1, string phoneNumber1, string password1)
 {
 	firstName = firstName1;

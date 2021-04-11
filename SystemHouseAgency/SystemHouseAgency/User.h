@@ -21,7 +21,7 @@ public:
 	//User(vector<string>);
 	User(string, string, string, string);
 	User(string, string, string, string, int);
-	//static int signIn(vector<User>);
+	static int signIn(vector<User> users, string phoneNumber1, string password1, bool& logedIn, bool& phoneNumberCorrect);
 	void signUp(string firstName1, string lastName1, string phoneNumber1, string password1);
 	string getFirstName();
 	string getLastName();
