@@ -145,12 +145,14 @@
     <ClCompile Include="SearchSystem.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserView.cpp" />
     <ClCompile Include="workDB.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renter.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="UserView.h" />
     <ClInclude Include="workDB.h" />
   </ItemGroup>
   <ItemGroup>
