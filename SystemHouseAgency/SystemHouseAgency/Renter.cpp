@@ -62,10 +62,4 @@ void Renter::deleteFavouriteAds(vector<Ad>& ads, string phoneNumber, int id)
 		if (fl)
 			break;
 	}
-	//temp = a.getLikedUsers();
-	/*for (int i = 0; i < temp.size(); i++)
-		if (temp[i] == phoneNumber)
-			ind = i;
-	temp.erase(temp.begin() + ind);*/
-	//a.setLikedUsers(temp);
 }

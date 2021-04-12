@@ -18,7 +18,6 @@ public:
 
 public:
 	User();
-	//User(vector<string>);
 	User(string, string, string, string);
 	User(string, string, string, string, int);
 	static int signIn(vector<User> users, string phoneNumber1, string password1, bool& logedIn, bool& phoneNumberCorrect);

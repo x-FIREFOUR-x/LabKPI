@@ -1,9 +1,6 @@
 #include "UserView.h"
 #include <iostream>
 
-/*UserView::UserView()
-{
-}*/
 User UserView::signUpView(vector<string> phoneNumbers)
 {
 	string password1;

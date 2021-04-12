@@ -9,12 +9,6 @@ User::User()
 	//signUp();
 	id = count - 1;
 }
-/*User::User(vector<string> phoneNumbers)
-{
-	count++;
-	signUp(phoneNumbers);
-	id = count - 1;
-}*/
 User::User(string firstName1, string lastName1, string phoneNumber1, string password1)
 {
 	count++;
