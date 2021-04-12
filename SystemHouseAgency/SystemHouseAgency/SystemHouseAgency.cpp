@@ -3,6 +3,7 @@
 #include "workDB.h"
 #include "SearchSystem.h"
 #include "Owner.h"
+#include "UserView.h"
 
 using namespace std;
 
@@ -27,19 +28,20 @@ int main()
 		if (operation == "1")
 		{
 			vector<string> phoneNumbers = createPhoneNumbers(users);
-			User u(phoneNumbers);
+			UserView U;
+			User u = U.signUpView(phoneNumbers);
 			users.push_back(u);
 
 			writeUsers(users);
 
 			cout << "Please, log in to your account" << endl;
-			id = User::signIn(users);
+			id = UserView::signInView(users);
 			exit = false;
 		}
 		else
 		if (operation == "2")
 		{
-			id = User::signIn(users);
+			id = UserView::signInView(users);
 			exit = false;
 		}
 		else

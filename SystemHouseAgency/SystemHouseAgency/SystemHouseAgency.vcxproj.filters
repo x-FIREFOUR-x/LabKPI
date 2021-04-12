@@ -8,6 +8,7 @@
     <ClCompile Include="workDB.cpp" />
     <ClCompile Include="Renter.cpp" />
     <ClCompile Include="Owner.cpp" />
+    <ClCompile Include="UserView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h" />
@@ -16,5 +17,6 @@
     <ClInclude Include="workDB.h" />
     <ClInclude Include="Renter.h" />
     <ClInclude Include="Owner.h" />
+    <ClInclude Include="UserView.h" />
   </ItemGroup>
 </Project>

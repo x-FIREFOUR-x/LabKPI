@@ -80,10 +80,10 @@ void readAds(std::vector<Ad>& ads)
 			}
 			pos = next + 1;
 			next = s.find(' ', pos);
-			price = stoi(s.substr(pos, next - pos));
+			area = stoi(s.substr(pos, next - pos));
 			pos = next + 1;
 			next = s.find(' ', pos);
-			area = stoi(s.substr(pos, next - pos));
+			price = stoi(s.substr(pos, next - pos));
 			pos = next + 1;
 			next = s.find('+', pos);
 			address = s.substr(pos, next - pos - 1);
@@ -97,7 +97,7 @@ void readAds(std::vector<Ad>& ads)
 				likedUsers.push_back(s.substr(pos, next - pos));
 				pos = next + 1;
 			}
-			Ad a(title, price, area, address, phoneNumber, likedUsers);
+			Ad a(title, area, price,  address, phoneNumber, likedUsers);
 			ads.push_back(a);
 		}
 	}
@@ -118,7 +118,7 @@ void writeAds(std::vector<Ad>& ads)
 			if (title[i] == ' ')
 				title[i] = '_';
 		}
-		s = title + " " + to_string(ads[i].getPrice()) + " " + to_string(ads[i].getArea()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber();
+		s = title  + " " + to_string(ads[i].getArea()) + " " + to_string(ads[i].getPrice()) + " " + ads[i].getAddress() + " " + ads[i].getPhoneNumber();
 		vector<string> likedUsers = ads[i].getLikedUsers();
 		for (int j = 0; j < likedUsers.size(); j++)
 			s = s + " " + likedUsers[j];
