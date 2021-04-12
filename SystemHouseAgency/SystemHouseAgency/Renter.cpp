@@ -1,5 +1,6 @@
 #include "Renter.h"
 #include <iostream>
+#include "RenterView.h"
 
 void Renter::addToLiked(Ad& a, string phoneNumber)
 {
@@ -25,10 +26,8 @@ bool Renter::showFavouriteAds(vector<Ad> ads, string phoneNumber)
 			if (likedUsers[j] == phoneNumber)
 			{
 				fl = true;
-				cout << k << ":" << endl;
+				RenterView::showFavouriteAd(ads, i, k);
 				k++;
-				ads[i].getInfo();
-				cout << endl;
 				break;
 			}
 	}

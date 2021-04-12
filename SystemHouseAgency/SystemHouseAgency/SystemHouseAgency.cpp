@@ -4,6 +4,7 @@
 #include "SearchSystemView.h"
 #include "Owner.h"
 #include "UserView.h"
+#include "RenterView.h"
 
 using namespace std;
 
@@ -148,14 +149,7 @@ int main()
 					fl = Renter::showFavouriteAds(ads, phone_number);
 					if (fl)
 					{
-						cout << "Choose ads which you want to delete: ";
-						string s = "";
-						if (cin.peek() == '\n') {
-							cin.ignore();
-						}
-						int k;
-						cin >> k;
-						Renter::deleteFavouriteAds(ads, users[id].getPhoneNumber(), k - 1);
+						RenterView::deleteFavouriteAd(ads, users, id);
 					}
 					else
 						cout << "You can't delete favourite ad, because you have not favourite ads" << endl;
