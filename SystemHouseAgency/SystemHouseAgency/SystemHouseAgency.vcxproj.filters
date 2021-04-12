@@ -10,6 +10,7 @@
     <ClCompile Include="Owner.cpp" />
     <ClCompile Include="UserView.cpp" />
     <ClCompile Include="SearchSystemView.cpp" />
+    <ClCompile Include="OwnerView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h" />
@@ -20,5 +21,6 @@
     <ClInclude Include="Owner.h" />
     <ClInclude Include="UserView.h" />
     <ClInclude Include="SearchSystemView.h" />
+    <ClInclude Include="OwnerView.h" />
   </ItemGroup>
 </Project>

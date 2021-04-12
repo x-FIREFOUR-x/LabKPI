@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ad.cpp" />
+    <ClCompile Include="OwnerView.cpp" />
     <ClCompile Include="Renter.cpp" />
     <ClCompile Include="Owner.cpp" />
     <ClCompile Include="SearchSystem.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="workDB.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OwnerView.h" />
     <ClInclude Include="Renter.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="SearchSystemView.h" />

@@ -12,7 +12,7 @@ class UserView
 	bool inSystem;
 	int id;
 public:
-	UserView();
+	//UserView();
 	User signUpView(vector<string> phoneNumbers);
 	static int signInView(vector<User> users);
 };
