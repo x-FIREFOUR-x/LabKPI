@@ -1,5 +1,6 @@
 #pragma once
 #include"Ad.h"
+#include "OwnerView.h"
 #include<string>
 #include <vector>
 #include <iostream>

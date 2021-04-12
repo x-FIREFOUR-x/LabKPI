@@ -7,7 +7,7 @@ bool Owner::MyAds(vector<Ad> ads, string phoneNumber)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
         {
-            cout << n << ":" << endl;
+            OwnerView::showNumber(n);
             n++;
             isAd = true;
             ads[i].getInfo();
@@ -22,21 +22,7 @@ void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
     int price;
     string address;
 
-    cout << "Input title your ad: ";
-    if (cin.peek() == '\n') {
-        cin.ignore();
-    }
-    getline(cin, title);
-    cout << "Input area your house: " ;
-    cin >> area;
-    cout << "Input price your house: ";
-    cin >> price;
-    cout << "Input address your house (city street number house): ";
-
-    if (cin.peek() == '\n') {
-        cin.ignore();
-    }
-    getline(cin, address);
+    OwnerView::readParameters(title, area, price, address);
 
     Ad ad(title, area, price,  address, phoneNumber);
     ads.push_back(ad);
@@ -44,11 +30,9 @@ void Owner::AddAds(vector<Ad>& ads, string phoneNumber)
 }
 void Owner::DeleteAds(vector<Ad>& ads, string phoneNumber)
 {
-    int numberAd;
+    int numberAd = OwnerView::readNumberAdDelete();
     int currentNumberAd = 0;
-    cout << "Input number ad, which you want delete: ";
-    cin >> numberAd;
-    numberAd--;
+    
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
@@ -71,32 +55,17 @@ void Owner::ChangeAds(vector<Ad>& ads, string phoneNumber)
     string area;
     string price;
 
-    int numberAd;
+    int numberAd = OwnerView::readNumberAdChange();
     int currentNumberAd = 0;
-    cout << "Input number ad, which you want change: ";
-    cin >> numberAd;
-    numberAd--;
+    
     for (int i = 0; i < ads.size(); i++)
     {
         if (ads[i].getPhoneNumber() == phoneNumber)
         {
             if (numberAd == currentNumberAd)
             {
-                cout << "Input new title ad(if you don't want change this parameter input -): ";
-                if (cin.peek() == '\n') {
-                    cin.ignore();
-                }
-                getline(cin, title);
-                cout << "Input new area ad(if you don't want change this parameter input -): ";
-                cin >> area;
-                cout << "Input new price ad(if you don't want change this parameter input -): ";
-                cin >> price;
-                cout << "Input new address ad(if you don't want change this parameter input -): ";
-                if (cin.peek() == '\n') 
-                {
-                    cin.ignore();
-                }
-                getline(cin, address);
+                OwnerView::readNewParameters(title, area, price, address);
+
                 if (title == "-")
                 {
                     title = ads[i].getTitle();
@@ -113,6 +82,7 @@ void Owner::ChangeAds(vector<Ad>& ads, string phoneNumber)
                 {
                     address = ads[i].getAddress();
                 }
+
                 Ad ad(title, stoi(area), stoi(price), address, phoneNumber);
                 ads[i] = ad;
                 break;
