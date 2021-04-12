@@ -49,6 +49,7 @@ int main()
 		{
 			SearchSystemView googleView;
 			googleView.showResults(ads);
+			exit = true;
 		}
 		else
 		if (operation == "4")
