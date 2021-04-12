@@ -143,6 +143,7 @@
     <ClCompile Include="OwnerView.cpp" />
     <ClCompile Include="Renter.cpp" />
     <ClCompile Include="Owner.cpp" />
+    <ClCompile Include="RenterView.cpp" />
     <ClCompile Include="SearchSystem.cpp" />
     <ClCompile Include="SearchSystemView.cpp" />
     <ClCompile Include="SystemHouseAgency.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="OwnerView.h" />
     <ClInclude Include="Renter.h" />
     <ClInclude Include="Owner.h" />
+    <ClInclude Include="RenterView.h" />
     <ClInclude Include="SearchSystemView.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserView.h" />

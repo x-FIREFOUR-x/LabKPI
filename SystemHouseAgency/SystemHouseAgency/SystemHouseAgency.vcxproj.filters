@@ -11,6 +11,7 @@
     <ClCompile Include="UserView.cpp" />
     <ClCompile Include="SearchSystemView.cpp" />
     <ClCompile Include="OwnerView.cpp" />
+    <ClCompile Include="RenterView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h" />
@@ -22,5 +23,6 @@
     <ClInclude Include="UserView.h" />
     <ClInclude Include="SearchSystemView.h" />
     <ClInclude Include="OwnerView.h" />
+    <ClInclude Include="RenterView.h" />
   </ItemGroup>
 </Project>
