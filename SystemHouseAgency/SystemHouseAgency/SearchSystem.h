@@ -12,8 +12,8 @@ private:
 	int minArea, maxArea;
 
 public:
-	void setFilters();
-	void search(vector<Ad>);
-	void search(vector<Ad>&, User);
+	SearchSystem(std::string, int, int, std::string, std::string, std::string, int, int);
+	vector<int> search(vector<Ad>);
+	void pushToLiked(vector<Ad>&, vector<int>, User, string);
 };
 
