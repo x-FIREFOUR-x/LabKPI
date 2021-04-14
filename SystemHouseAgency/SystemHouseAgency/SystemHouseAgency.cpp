@@ -92,7 +92,6 @@ int main()
 				{
 					SearchSystemView googleView;
 					googleView.showResults(ads, users[id]);
-					cout << " Chose ads was successfully add in list favourite ads" << endl << endl;
 				}
 				else
 				if (operation == "2")

@@ -9,7 +9,10 @@ SearchSystemView::SearchSystemView()
 	bool success;
 	cout << "Put '*' if you dont want to fill the field\n";
 	cout << "Enter title: ";
-	cin >> title;
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, title);
 	success = false;
 	while (!success)
 	{
@@ -30,6 +33,10 @@ SearchSystemView::SearchSystemView()
 			{
 				minPrice = stoi(s);
 				success = true;
+			}
+			else
+			{
+				cout << " !You must put only numbers" << endl;
 			}
 		}
 	}
@@ -53,6 +60,10 @@ SearchSystemView::SearchSystemView()
 			{
 				maxPrice = stoi(s);
 				success = true;
+			}
+			else
+			{
+				cout << " !You must put only numbers" << endl;
 			}
 		}
 	}
@@ -91,6 +102,10 @@ SearchSystemView::SearchSystemView()
 				minArea = stoi(s);
 				success = true;
 			}
+			else
+			{
+				cout << " !You must put only numbers" << endl;
+			}
 		}
 	}
 	success = false;
@@ -113,6 +128,10 @@ SearchSystemView::SearchSystemView()
 			{
 				maxArea = stoi(s);
 				success = true;
+			}
+			else
+			{
+				cout << " !You must put only numbers" << endl;
 			}
 		}
 	}
@@ -142,11 +161,21 @@ void SearchSystemView::showResults(vector<Ad>& ads, User user)
 		cout << i + 1 << ":" << endl;
 		ads[results[i]].getInfo();
 	}
-	cout << endl << "Enter numbers of houses, which you want to add to favourites: ";
-	string s = "";
-	if (cin.peek() == '\n') {
-		cin.ignore();
+	bool success = false;
+	while (!success)
+	{
+		cout << endl << "Enter numbers of houses, which you want to add to favourites: ";
+		string s = "";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, s);
+		if (!google.pushToLiked(ads, results, user, s))
+			cout << " !Put only numbers from the list" << endl;
+		else
+		{
+			cout << "Successfully" << endl << endl;
+			success = true;
+		}
 	}
-	getline(cin, s);
-	google.pushToLiked(ads, results, user, s);
 }

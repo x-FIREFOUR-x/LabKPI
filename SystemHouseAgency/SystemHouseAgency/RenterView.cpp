@@ -18,10 +18,7 @@ void RenterView::deleteFavouriteAd(vector<Ad>&ads, vector<User> users, int id)
 	{
 		cout << "Choose ads which you want to delete: ";
 		string s = "";
-		if (cin.peek() == '\n') {
-			cin.ignore();
-		}
-		getline(cin, s);
+		cin >> s;
 		bool fl = true;
 		for (int i = 0; i < s.length(); i++)
 			if (!isdigit(s[i]))
@@ -30,6 +27,10 @@ void RenterView::deleteFavouriteAd(vector<Ad>&ads, vector<User> users, int id)
 		{
 			k = stoi(s);
 			success = true;
+		}
+		else
+		{
+			cout << " !Put right number" << endl;
 		}
 	}
 	Renter::deleteFavouriteAds(ads, users[id].getPhoneNumber(), k - 1);

@@ -14,6 +14,6 @@ private:
 public:
 	SearchSystem(std::string, int, int, std::string, std::string, std::string, int, int);
 	vector<int> search(vector<Ad>);
-	void pushToLiked(vector<Ad>&, vector<int>, User, string);
+	bool pushToLiked(vector<Ad>&, vector<int>, User, string);
 };
 
