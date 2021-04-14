@@ -17,7 +17,11 @@ SearchSystemView::SearchSystemView()
 	while (!success)
 	{
 		cout << "Enter minPrice: ";
-		cin >> s;
+		s = "";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, s);
 		if (s == "*")
 		{
 			minPrice = -1;
@@ -26,9 +30,14 @@ SearchSystemView::SearchSystemView()
 		else
 		{
 			bool fl = true;
-			for (int i = 0; i < s.length(); i++)
-				if (!isdigit(s[i]))
-					fl = false;
+			if (s != "")
+			{
+				for (int i = 0; i < s.length(); i++)
+					if (!isdigit(s[i]))
+						fl = false;
+			}
+			else
+				fl = false;
 			if (fl)
 			{
 				minPrice = stoi(s);
@@ -44,7 +53,11 @@ SearchSystemView::SearchSystemView()
 	while (!success)
 	{
 		cout << "Enter maxPrice: ";
-		cin >> s;
+		s = "";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, s);
 		if (s == "*")
 		{
 			maxPrice = -1;
@@ -53,9 +66,14 @@ SearchSystemView::SearchSystemView()
 		else
 		{
 			bool fl = true;
-			for (int i = 0; i < s.length(); i++)
-				if (!isdigit(s[i]))
-					fl = false;
+			if (s != "")
+			{
+				for (int i = 0; i < s.length(); i++)
+					if (!isdigit(s[i]))
+						fl = false;
+			}
+			else
+				fl = false;
 			if (fl)
 			{
 				maxPrice = stoi(s);
@@ -68,24 +86,37 @@ SearchSystemView::SearchSystemView()
 		}
 	}
 	cout << "Enter city: ";
-	cin >> city;
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, city);
 	street = "*";
 	house = "*";
 	if (city != "*")
 	{
 		cout << "Enter street: ";
-		cin >> street;
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, street);
 		if (street != "*")
 		{
 			cout << "Enter house: ";
-			cin >> street;
+			if (cin.peek() == '\n') {
+				cin.ignore();
+			}
+			getline(cin, house);
 		}
 	}
 	success = false;
 	while (!success)
 	{
 		cout << "Enter minArea: ";
-		cin >> s;
+		s = "";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, s);
 		if (s == "*")
 		{
 			minArea = -1;
@@ -94,9 +125,14 @@ SearchSystemView::SearchSystemView()
 		else
 		{
 			bool fl = true;
-			for (int i = 0; i < s.length(); i++)
-				if (!isdigit(s[i]))
-					fl = false;
+			if (s != "")
+			{
+				for (int i = 0; i < s.length(); i++)
+					if (!isdigit(s[i]))
+						fl = false;
+			}
+			else
+				fl = false;
 			if (fl)
 			{
 				minArea = stoi(s);
@@ -112,7 +148,11 @@ SearchSystemView::SearchSystemView()
 	while (!success)
 	{
 		cout << "Enter maxArea: ";
-		cin >> s;
+		s = "";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, s);
 		if (s == "*")
 		{
 			maxArea = -1;
@@ -121,9 +161,14 @@ SearchSystemView::SearchSystemView()
 		else
 		{
 			bool fl = true;
-			for (int i = 0; i < s.length(); i++)
-				if (!isdigit(s[i]))
-					fl = false;
+			if (s != "")
+			{
+				for (int i = 0; i < s.length(); i++)
+					if (!isdigit(s[i]))
+						fl = false;
+			}
+			else
+				fl = false;
 			if (fl)
 			{
 				maxArea = stoi(s);

@@ -82,7 +82,6 @@ void Owner::ChangeAds(vector<Ad>& ads, string phoneNumber)
                 {
                     address = ads[i].getAddress();
                 }
-
                 Ad ad(title, stoi(area), stoi(price), address, phoneNumber);
                 ads[i] = ad;
                 break;
