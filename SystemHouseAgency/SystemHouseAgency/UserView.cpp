@@ -33,13 +33,13 @@ User UserView::signUpView(vector<string> phoneNumbers)
 		else
 			if (phoneNumber1.length() != 13)
 			{
-				cout << "Entered phone number is too long or too short!" << endl;
+				cout << " !Entered phone number is too long or too short!" << endl;
 				cout << "Input phone number again: ";
 				cin >> phoneNumber1;
 			}
 			else
 			{
-				cout << "This phone number is already used!" << endl;
+				cout << " !This phone number is already used!" << endl;
 				cout << "Input another phone number: ";
 				cin >> phoneNumber1;
 			}
@@ -58,7 +58,7 @@ User UserView::signUpView(vector<string> phoneNumbers)
 		}
 		else
 		{
-			cout << "Passwords do not match!" << endl;
+			cout << " !Passwords do not match!" << endl;
 			cout << "Input password again: ";
 			cin >> password1;
 			cout << "Repeat password: ";
@@ -91,11 +91,11 @@ int UserView::signInView(vector<User> users)
 
 		if (logedIn)
 		{
-			cout << "Hello " << users[id].getFirstName() << ", you have successfully logged in to your account" << endl;
+			cout << endl << "Hello " << users[id].getFirstName() << ", you have successfully logged in to your account" << endl;
 		}
 		else
 		{
-			cout << "Input phone number or password is wrong!" << endl;
+			cout << " !Input phone number or password is wrong!" << endl;
 		}
 	}
 	return id;
