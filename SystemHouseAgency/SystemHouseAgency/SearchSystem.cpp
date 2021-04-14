@@ -56,7 +56,7 @@ vector<int> SearchSystem::search(vector<Ad> adverts)
 	return result;
 }
 
-void SearchSystem::pushToLiked(vector<Ad>&adverts, vector<int> result, User user, string s)
+bool SearchSystem::pushToLiked(vector<Ad>&adverts, vector<int> result, User user, string s)
 {
 	if (s != "-")
 	{
@@ -64,7 +64,31 @@ void SearchSystem::pushToLiked(vector<Ad>&adverts, vector<int> result, User user
 		while (next != s.npos)
 		{
 			next = s.find(' ', pos);
-			int k = stoi(s.substr(pos, next - pos)) - 1;
+			bool success = false;
+			int k;
+			//int k = stoi(s.substr(pos, next - pos)) - 1;
+			string s1 = s.substr(pos, next - pos);
+			while (!success)
+			{
+				bool fl = true;
+				for (int i = 0; i < s1.length(); i++)
+					if (!isdigit(s1[i]))
+						fl = false;
+				if (fl)
+				{
+					k = stoi(s1) - 1;
+					if ((k > 0) && (k < result.size()))
+						success = true;
+					else
+					{
+						return false;
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
 			pos = next + 1;
 			Renter::addToLiked(adverts[result[k]], user.getPhoneNumber());
 		}
