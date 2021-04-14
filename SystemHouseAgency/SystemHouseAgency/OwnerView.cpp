@@ -25,8 +25,31 @@ void OwnerView::readParameters(string& title, int& area, int& price, string& add
 int OwnerView::readNumberAdDelete()
 {
     int numberAd;
-    cout << "Input number ad, which you want delete: ";
-    cin >> numberAd;
+    string number ;
+
+    bool success = false;
+
+    while (!success)
+    {
+        cout << "Input number ad, which you want delete: ";
+        if (cin.peek() == '\n')
+        {
+            cin.ignore();
+        }
+        getline(cin, number);
+        success = true;
+
+        for (int i = 0; i < number.length(); i++)
+        {
+            if (!isdigit(number[i]))
+            {
+                success = false;
+                break;
+            }
+        }
+        
+    }
+    numberAd = stoi(number);
     numberAd--;
 
     return numberAd;

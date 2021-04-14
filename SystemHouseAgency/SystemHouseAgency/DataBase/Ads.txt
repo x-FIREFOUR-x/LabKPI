@@ -1,4 +1,4 @@
-little_house 32 4800 Mykolaiv Soborna 15 +380675891565
+little_house 32 4800 Mykolaiv Soborna 15 +380675891565 +380676898123
 house_in_Odesa 65 7300 Odesa Sea 7 +380675891565 +380676898123 +380981333444
 Villa 150 35000 Mykolaiv Admirala 4 +380675891565 +380981333444
 Party_house_in_Volyn 150 9500 Volodymyr-Volynskyi Kovelska 99 +380676898123
