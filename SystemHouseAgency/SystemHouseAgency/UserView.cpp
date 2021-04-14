@@ -26,22 +26,41 @@ User UserView::signUpView(vector<string> phoneNumbers)
 				break;
 			}
 		}
-		if (phoneNumber1.length() == 13 && numberUsed == false)
+
+		bool numberIncludeNotDigit = false;
+		for (int i = 1; i < phoneNumber1.length(); i++)
 		{
-			phoneNumber = phoneNumber1;
+			char c = phoneNumber1[i];
+			if (!isdigit(c))
+			{
+				numberIncludeNotDigit = true;
+				break;
+			}
+		}
+
+		if (phoneNumber1.length() != 13)
+		{
+			cout << " !Entered phone number is too long or too short!" << endl;
+			cout << "Input phone number again: ";
+			cin >> phoneNumber1;
 		}
 		else
-			if (phoneNumber1.length() != 13)
-			{
-				cout << " !Entered phone number is too long or too short!" << endl;
-				cout << "Input phone number again: ";
-				cin >> phoneNumber1;
-			}
-			else
+		if (numberUsed)
 			{
 				cout << " !This phone number is already used!" << endl;
 				cout << "Input another phone number: ";
 				cin >> phoneNumber1;
+			}
+			else
+			if (phoneNumber1[0] != '+' || numberIncludeNotDigit)
+			{
+				cout << " !This phone number include inadmissible chars!" << endl;
+				cout << "Input another phone number: ";
+				cin >> phoneNumber1;
+			}
+			else
+			{
+				phoneNumber = phoneNumber1;
 			}
 	}
 
