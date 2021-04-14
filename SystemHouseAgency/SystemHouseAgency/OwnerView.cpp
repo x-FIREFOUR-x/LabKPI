@@ -231,7 +231,7 @@ void OwnerView::readNewParameters(string& title, string& area, string& price, st
             fl = true;
         if (fl)
         {
-            //area = stoi(s);
+            area = s;
             success = true;
         }
         else
@@ -261,7 +261,7 @@ void OwnerView::readNewParameters(string& title, string& area, string& price, st
             fl = true;
         if (fl)
         {
-            //price = stoi(s);
+            price = s;
             success = true;
         }
         else
