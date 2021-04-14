@@ -25,8 +25,58 @@ void OwnerView::readParameters(string& title, int& area, int& price, string& add
 int OwnerView::readNumberAdDelete()
 {
     int numberAd;
+    string number = "" ;
+
+    bool success = true;
+
     cout << "Input number ad, which you want delete: ";
-    cin >> numberAd;
+    if (cin.peek() == '\n')
+    {
+        cin.ignore();
+    }
+    getline(cin, number);
+
+    if (number == "")
+    {
+        success = false;
+    }
+
+    for (int i = 0; i < number.length(); i++)
+    {
+        if (!isdigit(number[i]))
+        {
+            success = false;
+            break;
+        }
+    }
+
+    while (!success)
+    {
+        cout << " !You must put only numbers" << endl;
+        cout << "Input number ad, which you want delete: ";
+        if (cin.peek() == '\n')
+        {
+            cin.ignore();
+        }
+        getline(cin, number);
+        success = true;
+
+        if (number == "")
+        {
+            success = false;
+        }
+
+        for (int i = 0; i < number.length(); i++)
+        {
+            if (!isdigit(number[i]))
+            {
+                success = false;
+                break;
+            }
+        }
+        
+    }
+    numberAd = stoi(number);
     numberAd--;
 
     return numberAd;
@@ -35,8 +85,59 @@ int OwnerView::readNumberAdDelete()
 int OwnerView::readNumberAdChange()
 {
     int numberAd;
+    string number = "";
+
+    bool success = true;
+
     cout << "Input number ad, which you want change: ";
-    cin >> numberAd;
+    if (cin.peek() == '\n')
+    {
+        cin.ignore();
+    }
+    getline(cin, number);
+    success = true;
+
+    if (number == "")
+    {
+        success = false;
+    }
+
+    for (int i = 0; i < number.length(); i++)
+    {
+        if (!isdigit(number[i]))
+        {
+            success = false;
+            break;
+        }
+    }
+
+    while (!success)
+    {
+        cout << " !You must put only numbers" << endl;
+        cout << "Input number ad, which you want change: ";
+        if (cin.peek() == '\n')
+        {
+            cin.ignore();
+        }
+        getline(cin, number);
+        success = true;
+
+        if (number == "")
+        {
+            success = false;
+        }
+
+        for (int i = 0; i < number.length(); i++)
+        {
+            if (!isdigit(number[i]))
+            {
+                success = false;
+                break;
+            }
+        }
+
+    }
+    numberAd = stoi(number);
     numberAd--;
 
     return numberAd;
