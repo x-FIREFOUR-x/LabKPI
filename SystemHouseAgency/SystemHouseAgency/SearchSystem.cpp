@@ -71,9 +71,14 @@ bool SearchSystem::pushToLiked(vector<Ad>&adverts, vector<int> result, User user
 			while (!success)
 			{
 				bool fl = true;
-				for (int i = 0; i < s1.length(); i++)
-					if (!isdigit(s1[i]))
-						fl = false;
+				if (s1 != "")
+				{
+					for (int i = 0; i < s1.length(); i++)
+						if (!isdigit(s1[i]))
+							fl = false;
+				}
+				else
+					fl = false;
 				if (fl)
 				{
 					k = stoi(s1) - 1;
