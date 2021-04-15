@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "Ad.h"
+//#include "UserView.h"
 
 using namespace std;
 class User
@@ -28,5 +29,6 @@ public:
 	string getPassword();
 	bool getInSystem();
 	int getId();
+	void changeProfile();
 };
 

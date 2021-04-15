@@ -119,3 +119,64 @@ int UserView::signInView(vector<User> users)
 	}
 	return id;
 }
+
+void UserView::readNewParameters(string& firstName, string& lastName, string& password)
+{
+	string s = "";
+	cout << "Input new first name(if you don't want change this parameter input -): ";
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, firstName);
+	cout << "Input new last name(if you don't want change this parameter input -): ";
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, lastName);
+	
+	string password1, password2;
+	bool success = false;
+	while (!success)
+	{
+		cout << "Input new password(if you don't want change this parameter input -): ";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+
+		getline(cin, password1);
+		if (password1 == "-")
+		{
+			password = password1;
+			success = true;
+		}
+		else
+		{
+			cout << "Repeat new password: ";
+			getline(cin, password2);
+			if (password1 == password2)
+			{
+				password = password1;
+				success = true;
+			}
+			else
+			{
+				cout << "password are different" << endl;
+			}
+		}
+	}
+}
+
+string UserView::askPassword(bool fl)
+{
+	string password;
+	if (!fl)
+	{
+		cout << " !Wrong password" << endl;
+	}
+	cout << "Enter your password: ";
+	if (cin.peek() == '\n') {
+		cin.ignore();
+	}
+	getline(cin, password);
+	return password;
+}
