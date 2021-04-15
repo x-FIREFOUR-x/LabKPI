@@ -87,3 +87,21 @@ int User::getId()
 {
 	return id;
 }
+
+/*void User::changeProfile()
+{
+	bool success = false;
+	if (password == UserView::askPassword(true))
+		success = true;
+	while (!success)
+		if (password == UserView::askPassword(false))
+			success = true;
+	string firstName1, lastName1, password1;
+	UserView::readNewParameters(firstName1, lastName1, password1);
+	if (firstName1 != "-")
+		firstName = firstName1;
+	if (lastName1 != "-")
+		lastName = lastName1;
+	if (password1 != "-")
+		password = password1;
+}*/
