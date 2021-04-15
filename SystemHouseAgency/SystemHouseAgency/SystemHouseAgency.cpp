@@ -83,6 +83,7 @@ int main()
 				cout << "\t5 - change ad" << endl;  
 				cout << "\t6 - show my favourite ads" << endl;
 				cout << "\t7 - delete favourite ad" << endl;
+				cout << "\t8 - Change your profile " << endl;
 				cout << "\t8 - sign out " << endl;
 				cout << "\tInput number: ";
 
@@ -176,11 +177,16 @@ int main()
 						cout << endl << " You can't delete favourite ad, because you have not favourite ads" << endl;
 				}
 				else
-					if (operation == "8")
-					{
-						exit = true;
-						break;
-					}
+				if (operation == "8")
+				{
+					users[id].changeProfile();
+				}
+				else
+				if (operation == "9")
+				{
+					exit = true;
+					break;
+				}
 				else
 				{
 					cout << " !Incorrectly selected operation! Try again" << endl;

@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include "User.h"
+#include "UserView.h"
+
 int User::count = 0;
 User::User()
 {
@@ -88,7 +90,7 @@ int User::getId()
 	return id;
 }
 
-/*void User::changeProfile()
+void User::changeProfile()
 {
 	bool success = false;
 	if (password == UserView::askPassword(true))
@@ -104,4 +106,4 @@ int User::getId()
 		lastName = lastName1;
 	if (password1 != "-")
 		password = password1;
-}*/
+}

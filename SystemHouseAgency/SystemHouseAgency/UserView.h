@@ -14,7 +14,7 @@ class UserView
 public:
 	User signUpView(vector<string> phoneNumbers);
 	static int signInView(vector<User> users);
-	//static void readNewParameters(string& firstName, string& lastName, string& password);
-	//static string askPassword(bool);
+	static void readNewParameters(string& firstName, string& lastName, string& password);
+	static string askPassword(bool);
 };
 
