@@ -3,4 +3,3 @@ house_in_Odesa 65 7300 Odesa Sea 7 +380675891565 +380676898123 +380981333444
 Villa 150 35000 Mykolaiv Admirala 4 +380675891565
 Party_house_in_Volyn 150 9500 Volodymyr-Volynskyi Kovelska 99 +380676898123
 Castle_Lubarta 311 56500 Lutsk Kafedralna 1A +380676898123
-qwe_qwe_qweqwe 2 1 New Orlean qwe 12 +380675891565

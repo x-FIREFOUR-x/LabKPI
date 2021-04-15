@@ -34,6 +34,8 @@ int main()
 		cout << endl;
 		if (operation == "1")
 		{
+			system("cls");
+
 			vector<string> phoneNumbers = createPhoneNumbers(users);
 			UserView U;
 			User u = U.signUpView(phoneNumbers);
@@ -44,30 +46,44 @@ int main()
 			cout << endl << "Please, log in to your account" << endl;
 			id = UserView::signInView(users);
 			exit = false;
+
+			system("pause");
 		}
 		else
 		if (operation == "2")
 		{
+			system("cls");
+
 			id = UserView::signInView(users);
 			exit = false;
+
+			system("pause");
 		}
 		else
 		if (operation == "3")
 		{
+			system("cls");
+
 			SearchSystemView googleView;
 			googleView.showResults(ads);
 			exit = true;
+			system("pause");
 		}
 		else
 		if (operation == "4")
 		{
+			system("cls");
+
 			exit = true;
 			break;
 		}
 		else
 		{
+			system("cls");
+
 			exit = true;
 			cout << " !Incorrectly selected operation! Try again" << endl;
+			system("pause");
 		}
 		writeUsers(users);
 
@@ -75,6 +91,8 @@ int main()
 		{
 			while (true)
 			{
+				system("cls");
+
 				cout << "\tUser menu:" << endl;
 				cout << "\t1 - search house " << endl;
 				cout << "\t2 - list my ads" << endl;
@@ -84,19 +102,25 @@ int main()
 				cout << "\t6 - show my favourite ads" << endl;
 				cout << "\t7 - delete favourite ad" << endl;
 				cout << "\t8 - Change your profile " << endl;
-				cout << "\t8 - sign out " << endl;
+				cout << "\t9 - sign out " << endl;
 				cout << "\tInput number: ";
 
 				cin >> operation;
 				cout << endl;
 				if (operation == "1")
 				{
+					system("cls");
+
 					SearchSystemView googleView;
 					googleView.showResults(ads, users[id]);
+
+					system("pause");
 				}
 				else
 				if (operation == "2")
 				{
+					system("cls");
+
 					cout << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
@@ -105,17 +129,25 @@ int main()
 						cout << " You have not ads" << endl ;
 					}
 					cout << endl;
+
+					system("pause");
 				}
 				else
 				if (operation == "3")
 				{
+					system("cls");
+
 					string phone_number = users[id].getPhoneNumber();
 					Owner::AddAds(ads, phone_number);
 					cout << " Your ad was successfully created" << endl << endl;
+
+					system("pause");
 				}
 				else
 				if (operation == "4")
 				{
+					system("cls");
+
 					cout << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
@@ -129,11 +161,15 @@ int main()
 						Owner::DeleteAds(ads, phone_number);
 						cout << " Your ad was successfully delete" << endl << endl;
 					}
+
+					system("pause");
 					
 				}
 				else
 				if (operation == "5")
 				{
+					system("cls");
+
 					cout << "My ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
 					bool isAd = Owner::MyAds(ads, phone_number);
@@ -147,11 +183,15 @@ int main()
 						Owner::ChangeAds(ads, phone_number);
 						cout << " Your ad was successfully change" << endl << endl;
 					}
+
+					system("pause");
 					
 				}
 				else
 				if (operation == "6")
 				{
+					system("cls");
+
 					bool fl;
 					cout << "My favourite ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
@@ -160,10 +200,14 @@ int main()
 					{
 						cout << " You have no favourite ads" << endl << endl;
 					}
+
+					system("pause");
 				}
 				else
 				if (operation == "7")
 				{
+					system("cls");
+
 					bool fl;
 					cout << "My favourite ads:" << endl;
 					string phone_number = users[id].getPhoneNumber();
@@ -175,27 +219,39 @@ int main()
 					}
 					else
 						cout << endl << " You can't delete favourite ad, because you have not favourite ads" << endl;
+
+					system("pause");
 				}
 				else
 				if (operation == "8")
 				{
+					system("cls");
+
 					users[id].changeProfile();
+
+					system("pause");
 				}
 				else
 				if (operation == "9")
 				{
+					system("cls");
+
 					exit = true;
 					break;
 				}
 				else
 				{
+					system("cls");
 					cout << " !Incorrectly selected operation! Try again" << endl;
+
+					system("pause");
 				}
 
 				writeAds(ads);
+				writeUsers(users);
 			}
 		}
-		
+		system("cls");
 	}
 
 	writeUsers(users);
