@@ -89,7 +89,14 @@ int User::getId()
 {
 	return id;
 }
-
+void User::setFirstName(string firstName1)
+{
+	firstName = firstName1;
+}
+void User::setLastName(string lastName1)
+{
+	lastName = lastName1;
+}
 void User::changeProfile()
 {
 	bool success = false;
