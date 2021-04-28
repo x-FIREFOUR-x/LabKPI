@@ -8,10 +8,18 @@ User UserView::signUpView(vector<string> phoneNumbers)
 	string phoneNumber1;
 
 	cout << "Input first name: ";
-	cin >> firstName;
+	if (cin.peek() == '\n') 
+	{
+		cin.ignore();
+	}
+	getline(cin, firstName);
 
 	cout << "Input last name: ";
-	cin >> lastName;
+	if (cin.peek() == '\n')
+	{
+		cin.ignore();
+	}
+	getline(cin, lastName);
 
 	cout << "Input phone number: ";
 	cin >> phoneNumber1;

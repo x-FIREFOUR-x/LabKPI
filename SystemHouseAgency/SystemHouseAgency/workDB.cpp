@@ -21,9 +21,19 @@ void readUsers(std::vector<User>&users)
 		{
 			next = s.find(' ', pos);
 			firstName = s.substr(pos, next - pos);
+			for (int i = 0; i < firstName.length(); i++)
+			{
+				if (firstName[i] == '_')
+					firstName[i] = ' ';
+			}
 			pos = next + 1;
 			next = s.find(' ', pos);
 			lastName = s.substr(pos, next - pos);
+			for (int i = 0; i < lastName.length(); i++)
+			{
+				if (lastName[i] == '_')
+					lastName[i] = ' ';
+			}
 			pos = next + 1;
 			next = s.find(' ', pos);
 			phoneNumber = s.substr(pos, next - pos);
@@ -44,11 +54,27 @@ void writeUsers(std::vector<User>& users)
 {
 	string s;
 	ofstream fout("DataBase\\Users.txt");
+
 	for (int i = 0; i < users.size(); i++)
 	{
-		s = users[i].getFirstName() + " " + users[i].getLastName() + " " + users[i].getPhoneNumber() + " " + users[i].getPassword() + "\n";
+		string FirstName = users[i].getFirstName();
+		for (int j = 0; j < FirstName.length(); j++)
+		{
+			if (FirstName[j] == ' ')
+				FirstName[j] = '_';
+		}
+		string LastName = users[i].getLastName();
+		for (int j = 0; j < LastName.length(); j++)
+		{
+			if (LastName[j] == ' ')
+				LastName[j] = '_';
+		}
+
+		s = FirstName + " " + LastName + " " + users[i].getPhoneNumber() + " " + users[i].getPassword() + "\n";
 		fout << s;
+
 	}
+	
 	fout.close();
 }
 

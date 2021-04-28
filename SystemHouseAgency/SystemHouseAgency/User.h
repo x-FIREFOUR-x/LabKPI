@@ -27,6 +27,8 @@ public:
 	string getLastName();
 	string getPhoneNumber();
 	string getPassword();
+	void setFirstName(string);
+	void setLastName(string);
 	bool getInSystem();
 	int getId();
 	void changeProfile();
