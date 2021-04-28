@@ -22,7 +22,11 @@ User UserView::signUpView(vector<string> phoneNumbers)
 	getline(cin, lastName);
 
 	cout << "Input phone number: ";
-	cin >> phoneNumber1;
+	if (cin.peek() == '\n')
+	{
+		cin.ignore();
+	}
+	getline(cin, phoneNumber1);
 	while (phoneNumber == "")
 	{
 		bool numberUsed = false;
@@ -50,21 +54,33 @@ User UserView::signUpView(vector<string> phoneNumbers)
 		{
 			cout << " !Entered phone number is too long or too short!" << endl;
 			cout << "Input phone number again: ";
-			cin >> phoneNumber1;
+			if (cin.peek() == '\n')
+			{
+				cin.ignore();
+			}
+			getline(cin, phoneNumber1);
 		}
 		else
 		if (numberUsed)
 			{
 				cout << " !This phone number is already used!" << endl;
 				cout << "Input another phone number: ";
-				cin >> phoneNumber1;
+				if (cin.peek() == '\n')
+				{
+					cin.ignore();
+				}
+				getline(cin, phoneNumber1);
 			}
 			else
 			if (phoneNumber1[0] != '+' || numberIncludeNotDigit)
 			{
 				cout << " !This phone number include inadmissible chars!" << endl;
 				cout << "Input another phone number: ";
-				cin >> phoneNumber1;
+				if (cin.peek() == '\n')
+				{
+					cin.ignore();
+				}
+				getline(cin, phoneNumber1);
 			}
 			else
 			{
@@ -73,23 +89,70 @@ User UserView::signUpView(vector<string> phoneNumbers)
 	}
 
 
-	cout << "Input password:";
-	cin >> password1;
-	cout << "Confirm password:";
-	cin >> password2;
+	cout << "Input password: ";
+	if (cin.peek() == '\n')
+	{
+		cin.ignore();
+	}
+	getline(cin, password1);
+	cout << "Confirm password: ";
+	if (cin.peek() == '\n')
+	{
+		cin.ignore();
+	}
+	getline(cin, password2);
+
 	while (password == "")
 	{
 		if (password1 == password2)
 		{
-			password = password1;
+			bool ContainSpace = false;
+			for (int i = 0; i < password1.length(); i++)
+			{
+				if (password1[i] == ' ')
+				{
+					ContainSpace = true;
+					break;
+				}
+			}
+			if (!ContainSpace)
+			{
+				password = password1;
+			}
+			else
+			{
+				cout << " !Password cannot contain spaces!" << endl;
+				cout << "Input password again: ";
+				if (cin.peek() == '\n')
+				{
+					cin.ignore();
+				}
+				getline(cin, password1);
+
+				cout << "Repeat password: ";
+				if (cin.peek() == '\n')
+				{
+					cin.ignore();
+				}
+				getline(cin, password2);
+			}
 		}
 		else
 		{
 			cout << " !Passwords do not match!" << endl;
 			cout << "Input password again: ";
-			cin >> password1;
+			if (cin.peek() == '\n')
+			{
+				cin.ignore();
+			}
+			getline(cin, password1);
+
 			cout << "Repeat password: ";
-			cin >> password2;
+			if (cin.peek() == '\n')
+			{
+				cin.ignore();
+			}
+			getline(cin, password2);
 		}
 	}
 
@@ -110,9 +173,18 @@ int UserView::signInView(vector<User> users)
 	{
 		phoneNumberCorrect = false;
 		cout << "Input your phone number: ";
-		cin >> phoneNumber1;
+		if (cin.peek() == '\n')
+		{
+			cin.ignore();
+		}
+		getline(cin, phoneNumber1);
+
 		cout << "Input your password: ";
-		cin >> password1;
+		if (cin.peek() == '\n')
+		{
+			cin.ignore();
+		}
+		getline(cin, password1);
 
 		id = User::signIn(users, phoneNumber1, password1, logedIn, phoneNumberCorrect);
 
